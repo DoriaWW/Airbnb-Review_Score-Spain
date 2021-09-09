@@ -18,6 +18,7 @@ Second, summarize your results concisely. Make use of subheaders where appropria
 Provide an overview of the directory structure and files.
 
 ## Running instructions
+To run the files [Make](https://tilburgsciencehub.com/get/make) is needed . The directory works with make which should be run. Also [R-studio] (https://tilburgsciencehub.com/get/r) is needed to run the R-files. 
 
 Explain to potential users how to run/replicate your workflow. Touch upon, if necessary, the required input data, which (secret) credentials are required (and how to obtain them), which software tools are needed to run the workflow (including links to the installation instructions), and how to run the workflow. Make use of subheaders where appropriate.
 
