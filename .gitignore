@@ -1,8 +1,0 @@
-*.log
-*.aux
-*.Rhistory
-.RData
-**gen/
-**.Rout
-*.csv
-.Rproj.user
