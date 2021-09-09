@@ -27,8 +27,11 @@ Point interested users to any related literature and/or documentation.
 
 ## About
 
-This project is performed by project group 2 of the Data Preparation and Workflow Management course of the TISEM department of Tilburg University. The project is done in the fall 2021 version of the course. The project was part of a team project performed by Marketing Analytics master students. Professor Hannes Datta contributed by providing helpful feedback during project feedback meetings.
+This project is performed by project group 2 of the [Data Preparation and Workflow Management course](https://github.com/hannesdatta/course-dprep) of the TISEM department of Tilburg University. 
+The project is done in the fall 2021 version of the course. The project was part of a team project performed by Marketing Analytics master students. Professor [Hannes Datta](https://github.com/hannesdatta) contributed by providing helpful feedback during project feedback meetings.
 
+##contributors
+Team members: [Doria Wengting Wang](https://github.com/DoriaWW), [Inge Oostveen](https://github.com/IngeOostveen), [Ralph](https://github.com/RalphGit21), [Paulus](https://github.com/pphovens), [Wouter Floors](https://github.com/WouterFloors)
 
 
 # Example of reproducible research workflow 
