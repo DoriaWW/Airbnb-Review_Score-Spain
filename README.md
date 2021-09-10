@@ -32,5 +32,5 @@ This project is performed by project group 2 of the [Data Preparation and Workfl
 The project is done in the fall 2021 version of the course. The project was part of a team project performed by Marketing Analytics master students. Professor [Hannes Datta](https://github.com/hannesdatta) contributed by providing helpful feedback during project feedback meetings.
 
 ##contributors
-Team members: [Doria Wengting Wang](https://github.com/DoriaWW), [Inge Oostveen](https://github.com/IngeOostveen), [Ralph](https://github.com/RalphGit21), [Paulus](https://github.com/pphovens), [Wouter Floors](https://github.com/WouterFloors)
+Team members: [Doria Wengting Wang](https://github.com/DoriaWW), [Inge Oostveen](https://github.com/IngeOostveen), [Ralph Delsing](https://github.com/RalphGit21), [Paulus Hovens](https://github.com/pphovens), [Wouter Floors](https://github.com/WouterFloors)
 
