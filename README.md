@@ -1,6 +1,6 @@
 # To review or not to review? That's the question
 
-__To what extent do the number of reviews affect a certain listings review score? What is the difference in this statistic between cities that differ in terms of the number of listings?__
+__Does the amount of reviews that your listing is getting on AirBnB affect the actual review score? Does this effect differ between big or small cities in Spain?__
 
 ![Headerphoto](https://s3.amazonaws.com/blog4.0/blog/wp-content/uploads/Feature-Image_The-Ultimate-Guide-to-Airbnb-Reviews@2x-scaled.png)
 
