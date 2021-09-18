@@ -2,7 +2,9 @@
 
 __Does the number of reviews that your listing is getting on AirBnB affect the actual review score? Does this effect differ between big or small cities in Spain?__
 
-![Headerphoto](https://s3.amazonaws.com/blog4.0/blog/wp-content/uploads/Feature-Image_The-Ultimate-Guide-to-Airbnb-Reviews@2x-scaled.png)
+<p align="center">
+  <img src="https://s3.amazonaws.com/blog4.0/blog/wp-content/uploads/Feature-Image_The-Ultimate-Guide-to-Airbnb-Reviews@2x-scaled.png" width="70%" />
+</p>
 
 ## Motivation
 
