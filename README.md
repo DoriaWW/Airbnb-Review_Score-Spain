@@ -8,20 +8,23 @@ __Does the number of reviews that your listing is getting on AirBnB affect the a
 
 ## Motivation
 
-We all know the feeling of opening an e-mail that asks you to leave a review on a product that you just bought or a listing that you stayed the night at. But do more reviews lead to a higher review score? Furthermore, this effect is examined at cities in Spain that differ in sizes, such as Malage compared to the capital Madrid. This code is written in order to find answers to these questions.
+We all know the feeling of opening an e-mail that asks you to leave a review on a product that you just bought or a listing that you stayed the night at. But do more reviews lead to a higher review score? Furthermore, this effect is examined at cities in Spain that differ in sizes, such as Malaga compared to the capital Madrid. This code is written in order to find answers to these questions.
+
+We want to dive into this problem because review scores are a important factor for customers when they decide which listing to stay at. Hosts want a good review score and some push their guests to leave a review. The issue that arises is that more reviews does not necessarily result into a higher review score. With this study we want to show to hosts if they should or should not push their guests for reviews by analyzing the relationship between review score and number of reviews, while taking moderators and control variables into account. 
 
 ## Method and results
 
-First, introduce and motivate your chosen method, and explain how it contributes to solving the research question/business problem.
+<!--- First, introduce and motivate your chosen method, and explain how it contributes to solving the research question/business problem. -->
 
 The relationship between the number of reviews and actual review score may be influenced by other variables, which are integrated in the model as moderators. In this study, three moderators are considered: 
 1) The city size which is encoded using dummy variables. Each of the seven cities in Spain falls in either one of three categories; Big, Medium or Small, depending on the number of residents. 
 2) Room type 
 3) Host characteristics. This variable is measured by taking the average of the sum of various different characteristics of the host, which are the response time, response rate, host location and number of host listings. 
 
+<!---
 Second, summarize your results concisely. Make use of subheaders where appropriate.
 
-<!---
+
 ## Repository overview
 
 Provide an overview of the directory structure and files.
