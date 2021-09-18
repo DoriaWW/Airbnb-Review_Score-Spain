@@ -1,6 +1,6 @@
 # To review or not to review? That's the question
 
-__Does the amount of reviews that your listing is getting on AirBnB affect the actual review score? Does this effect differ between big or small cities in Spain?__
+__Does the number of reviews that your listing is getting on AirBnB affect the actual review score? Does this effect differ between big or small cities in Spain?__
 
 ![Headerphoto](https://s3.amazonaws.com/blog4.0/blog/wp-content/uploads/Feature-Image_The-Ultimate-Guide-to-Airbnb-Reviews@2x-scaled.png)
 
@@ -8,13 +8,18 @@ __Does the amount of reviews that your listing is getting on AirBnB affect the a
 
 We all know the feeling of opening an e-mail that asks you to leave a review on a product that you just bought or a listing that you stayed the night at. But do more reviews lead to a higher review score? Furthermore, this effect is examined at cities in Spain that differ in sizes, such as Malage compared to the capital Madrid. This code is written in order to find answers to these questions.
 
-<!---
 ## Method and results
 
 First, introduce and motivate your chosen method, and explain how it contributes to solving the research question/business problem.
 
+The relationship between the number of reviews and actual review score may be influenced by other variables, which are integrated in the model as moderators. In this study, three moderators are considered: 
+1) The city size which is encoded using dummy variables. Each of the seven cities in Spain falls in either one of three categories; Big, Medium or Small, depending on the number of residents. 
+2) Room type 
+3) Host characteristics. This variable is measured by taking the average of the sum of various different characteristics of the host, which are the response time, response rate, host location and number of host listings. 
+
 Second, summarize your results concisely. Make use of subheaders where appropriate.
 
+<!---
 ## Repository overview
 
 Provide an overview of the directory structure and files.
