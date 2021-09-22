@@ -12,16 +12,28 @@ We all know the feeling of opening an e-mail that asks you to leave a review on 
 
 The reason for diving into this problem is because review scores are an important factor for customers when they decide which listing to stay at. Hosts want a good review score and some push their guests to leave a review. The issue that arises is that more reviews does not necessarily result into a higher review score. This study is conducted in order to show hosts if they should or should not push their guests for reviews by analyzing the relationship between review score and number of reviews, while taking moderators and control variables into account. 
 
+The study focusses on seven different cities in Spain. To be able to examine the differences between small and big cities, there are three categories; Big, Medium or Small. The number of residents determine the category of the city:
+- A Big city has **more than** 1000000 (a million) residents
+- A Medium city has **more than** 500000 residents
+- A Small city has **less than** 500000 residents
+
+
+The cities:
+
+_Big_: Barcelona and Madrid
+
+_Medium_: Sevilla, Valencia and Malaga
+
+_Small_: Menorca and Girona
+
 ## Method and results
 
 <!--- First, introduce and motivate your chosen method, and explain how it contributes to solving the research question/business problem. -->
 
 The relationship between the number of reviews and actual review score may be influenced by other variables, which are integrated in the model as moderators. In this study, three moderators are considered: 
 1) The city size which is encoded using dummy variables. Each of the seven cities in Spain falls in either one of three categories; Big, Medium or Small, depending on the number of residents. 
-2) Room type 
-3) Host characteristics. This variable is measured by taking the average of the sum of various different characteristics of the host, which are the response time, response rate, host location and number of host listings. 
-
-The data used for this project is available at [Inside AirBnB](http://insideairbnb.com/get-the-data.html)
+2) The Room type 
+3) Superhost status, true or false
 
 <!---
 Second, summarize your results concisely. Make use of subheaders where appropriate.
@@ -51,6 +63,17 @@ Point interested users to any related literature and/or documentation.
 
 This study is conducted by project group 2 of the [Data Preparation and Workflow Management course](https://github.com/hannesdatta/course-dprep) of the TISEM department of Tilburg University. 
 The project is done in the fall 2021 version of the course. The project was part of a team project performed by Marketing Analytics master students. Professor [Hannes Datta](https://github.com/hannesdatta) contributed by providing helpful feedback during project feedback meetings.
+The data used for this project is available at [Inside AirBnB](http://insideairbnb.com/get-the-data.html)
+
+## Resources
+
+There are multiple studies that focus on reviews on AirBnB. Studies worth mentioning are:
+- Bridges, J., & Vásquez, C. (2018). If nearly all Airbnb reviews are positive, does that make them meaningless?. Current Issues in Tourism, 21(18), 2057-2075.
+  In the study the authors find that AirBnB reviews appear to be highly positive and therefor quite similar to one another. If reviews are quite similar, what is the added value that reviews bring to one listing? 
+- Ert, E., Fleischer, A., & Magen, N. (2016). Trust and reputation in the sharing economy: The role of personal photos in Airbnb. Tourism management, 55, 62-73.
+Fleischer and Magen find that the more trustworthy a host is perceived on their profile picture, the higher the price of the listing can be, and the probabilty of the listing being chosen. Furthermore, they find that the host's reputation, their online review scores, has less effect on the price or booking.
+- Liang, S., Schuckert, M., Law, R., & Chen, C. C. (2017). Be a “Superhost”: The importance of badge systems for peer-to-peer rental accommodations. Tourism management, 60, 454-465. This study focuses on the label "Superhost", a label that is given by AirBnB for a host with certain qualities, and how this label can impact listings review volume and ratings. "Superhosts" are more likely to receive reviews and higher ratings and guest are willing to pay more for these listings.
+  
 
 ## Contributors
 Team members: [Doria Wengting Wang](https://github.com/DoriaWW), [Inge Oostveen](https://github.com/IngeOostveen), [Ralph Delsing](https://github.com/RalphGit21), [Paulus Hovens](https://github.com/pphovens), [Wouter Floors](https://github.com/WouterFloors)
