@@ -1,9 +1,5 @@
 ## Libraries
-install.packages(haven)
-install.packages(googledrive)
-library(haven)
-library(googledrive)
-library(tidyverse)
+library(haven); library(googledrive); library(tidyverse)
 
 ## Original Data file
 dir.create(("data"), showWarnings = FALSE)
@@ -84,20 +80,19 @@ listings_sevilla$size_medium <- 1
 listings_valencia$size_small <- 0
 listings_valencia$size_medium <- 1
 
-## Creating a data frame
-listings_barcelona <- listings_barcelona %>% select(18, 33, 56, 61:67, 75:77)
-listings_girona <- listings_girona %>% select(18, 33, 56, 61:67, 75:77)
-listings_madrid <- listings_madrid %>% select(18, 33, 56, 61:67, 75:77)
-listings_malaga <- listings_malaga %>% select(18, 33, 56, 61:67, 75:77)
-listings_menorca <- listings_menorca %>% select(18, 33, 56, 61:67, 75:77)
-listings_sevilla <- listings_sevilla %>% select(18, 33, 56, 61:67, 75:77)
-listings_valencia <- listings_valencia %>% select(18, 33, 56, 61:67, 75:77)
+## Selecting relevant columns and deleting missing values
+cols_to_keep =  c('host_is_superhost', 'room_type', 'number_of_reviews', 'review_scores_rating', 'review_scores_accuracy', 'review_scores_cleanliness', 'review_scores_checkin', 'review_scores_communication', 'review_scores_location', 'review_scores_value', 'city', 'size_small', 'size_medium', 'size_large')
 
-## Deleting missing values
-listings_barcelona <- na.omit(listings_barcelona)
-listings_girona <- na.omit(listings_girona)
-listings_madrid <- na.omit(listings_madrid)
-listings_malaga <- na.omit(listings_malaga)
-listings_menorca <- na.omit(listings_menorca)
-listings_sevilla <- na.omit(listings_sevilla)
-listings_valencia <- na.omit(listings_valencia)
+listings_barcelona <- na.omit(listings_barcelona[, which(colnames(listings_barcelona)%in%cols_to_keep)])
+listings_girona <- na.omit(listings_girona[, which(colnames(listings_girona)%in%cols_to_keep)])
+listings_madrid <- na.omit(listings_madrid[, which(colnames(listings_madrid)%in%cols_to_keep)])
+listings_malaga <- na.omit(listings_malaga[, which(colnames(listings_malaga)%in%cols_to_keep)])
+listings_menorca <- na.omit(listings_menorca[, which(colnames(listings_menorca)%in%cols_to_keep)])
+listings_sevilla <- na.omit(listings_sevilla[, which(colnames(listings_sevilla)%in%cols_to_keep)])
+listings_valencia <- na.omit(listings_valencia[, which(colnames(listings_valencia)%in%cols_to_keep)])
+
+## Merge dataset and create dummy variable for room_type
+# Merged dataset (name: listings_all)
+
+# listings_all$room_type = ifelse(listings_all$room_type == "Private room", 1, 0)
+
