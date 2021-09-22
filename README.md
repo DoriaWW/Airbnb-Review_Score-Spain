@@ -24,6 +24,9 @@ The relationship between the number of reviews and actual review score may be in
 <!---
 Second, summarize your results concisely. Make use of subheaders where appropriate.
 
+**## Data
+**
+The data used for this project is available at [Inside AirBnB](http://insideairbnb.com/get-the-data.html).
 
 ## Repository overview
 
