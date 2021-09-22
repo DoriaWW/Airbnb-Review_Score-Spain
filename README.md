@@ -35,6 +35,9 @@ The relationship between the number of reviews and actual review score may be in
 2) The Room type 
 3) Superhost status, true or false
 
+
+The results of this study are presented in a PDF report.
+
 <!---
 Second, summarize your results concisely. Make use of subheaders where appropriate.
 
