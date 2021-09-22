@@ -21,12 +21,10 @@ The relationship between the number of reviews and actual review score may be in
 2) Room type 
 3) Host characteristics. This variable is measured by taking the average of the sum of various different characteristics of the host, which are the response time, response rate, host location and number of host listings. 
 
+The data used for this project is available at [Inside AirBnB](http://insideairbnb.com/get-the-data.html)
+
 <!---
 Second, summarize your results concisely. Make use of subheaders where appropriate.
-
-**## Data
-**
-The data used for this project is available at [Inside AirBnB](http://insideairbnb.com/get-the-data.html).
 
 ## Repository overview
 
