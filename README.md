@@ -32,7 +32,7 @@ _Small_: Menorca and Girona
 
 The relationship between the number of reviews and actual review score may be influenced by other variables, which are integrated in the model as moderators. In this study, three moderators are considered: 
 1) The city size which is encoded using dummy variables. Each of the seven cities in Spain falls in either one of three categories; Big, Medium or Small, depending on the number of residents. 
-2) The Room type, there are four categories; Entire home/appartment, Hotel room, private room or shared room. 
+2) The Room type, there are four categories; Entire home/appartment, Hotel room, Private room or Shared room. 
 3) Superhost status, true or false
 
 
