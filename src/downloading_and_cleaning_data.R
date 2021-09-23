@@ -1,5 +1,5 @@
 ## Libraries
-library(haven); library(googledrive); library(tidyverse)
+library(haven); library(googledrive); library(tidyverse); library(dplyr)
 
 ## Original Data file
 dir.create(("data"), showWarnings = FALSE)
@@ -91,8 +91,14 @@ listings_menorca <- na.omit(listings_menorca[, which(colnames(listings_menorca)%
 listings_sevilla <- na.omit(listings_sevilla[, which(colnames(listings_sevilla)%in%cols_to_keep)])
 listings_valencia <- na.omit(listings_valencia[, which(colnames(listings_valencia)%in%cols_to_keep)])
 
-## Merge dataset and create dummy variable for room_type
-# Merged dataset (name: listings_all)
-
+## Merged dataset (name: listings_all)
+listings_all <- rbind(listings_barcelona,
+                      listings_girona,
+                      listings_madrid,
+                      listings_malaga,
+                      listings_menorca,
+                      listings_sevilla,
+                      listings_valencia)
+## Create dummy variable for room_type
 # listings_all$room_type = ifelse(listings_all$room_type == "Private room", 1, 0)
 
