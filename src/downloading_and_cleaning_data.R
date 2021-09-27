@@ -100,5 +100,9 @@ listings_all <- rbind(listings_barcelona,
                       listings_sevilla,
                       listings_valencia)
 ## Create dummy variable for room_type
-# listings_all$room_type = ifelse(listings_all$room_type == "Private room", 1, 0)
+
+listings_all$room_type_private = ifelse(listingdet2$room_type == "Private room", 1, 0)
+listings_all$room_type_hotel = ifelse(listingdet2$room_type == "Hotel room", 1, 0)
+listings_all$room_type_entire = ifelse(listingdet2$room_type == "Entire home/apt", 1, 0)
+
 
