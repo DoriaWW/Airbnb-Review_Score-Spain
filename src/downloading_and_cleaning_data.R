@@ -91,6 +91,7 @@ listings_malaga <- na.omit(listings_malaga[, which(colnames(listings_malaga)%in%
 listings_menorca <- na.omit(listings_menorca[, which(colnames(listings_menorca)%in%cols_to_keep)])
 listings_sevilla <- na.omit(listings_sevilla[, which(colnames(listings_sevilla)%in%cols_to_keep)])
 listings_valencia <- na.omit(listings_valencia[, which(colnames(listings_valencia)%in%cols_to_keep)])
+rm(cols_to_keep)
 
 ## Merged dataset (name: listings_all)
 listings_all <- rbind(listings_barcelona,
@@ -100,6 +101,7 @@ listings_all <- rbind(listings_barcelona,
                       listings_menorca,
                       listings_sevilla,
                       listings_valencia)
+rm(listings_barcelona,listings_girona,listings_madrid,listings_malaga,listings_menorca,listings_sevilla,listings_valencia)
 
 ## Create dummy variable for room_type
 listings_all$room_type_private = ifelse(listings_all$room_type == "Private room", 1, 0)
@@ -108,3 +110,5 @@ listings_all$room_type_entire = ifelse(listings_all$room_type == "Entire home/ap
 
 # Reallocate columns
 listings_all <- listings_all[,c(1, 2, 14, 15, 16, 3, 4, 5, 6, 7, 8, 9, 10, 12, 13, 11)]
+
+
