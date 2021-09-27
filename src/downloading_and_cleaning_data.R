@@ -1,5 +1,5 @@
 ## Setup
-install.packages("haven"); install.packages("googledrive"); install.packages("tidyverse"); install.packages("dplyr")
+# install.packages("haven"); install.packages("googledrive"); install.packages("tidyverse"); install.packages("dplyr")
 library(haven); library(googledrive); library(tidyverse); library(dplyr)
 
 ## Downloading the data
@@ -105,3 +105,6 @@ listings_all <- rbind(listings_barcelona,
 listings_all$room_type_private = ifelse(listings_all$room_type == "Private room", 1, 0)
 listings_all$room_type_hotel = ifelse(listings_all$room_type == "Hotel room", 1, 0)
 listings_all$room_type_entire = ifelse(listings_all$room_type == "Entire home/apt", 1, 0)
+
+# Reallocate columns
+listings_all <- listings_all[,c(1, 2, 14, 15, 16, 3, 4, 5, 6, 7, 8, 9, 10, 12, 13, 11)]
