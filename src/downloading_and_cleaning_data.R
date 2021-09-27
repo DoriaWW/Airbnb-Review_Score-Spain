@@ -1,7 +1,8 @@
-## Libraries
+## Setup
+install.packages("haven"); install.packages("googledrive"); install.packages("tidyverse"); install.packages("dplyr")
 library(haven); library(googledrive); library(tidyverse); library(dplyr)
 
-## Original Data file
+## Downloading the data
 dir.create(("data"), showWarnings = FALSE)
 data_id <-"11MaNZ2_XatX9OGZNkJnY9mWSPsZHuu3U"
 out_file <- "data/listings_barcelona.csv"
@@ -99,10 +100,8 @@ listings_all <- rbind(listings_barcelona,
                       listings_menorca,
                       listings_sevilla,
                       listings_valencia)
+
 ## Create dummy variable for room_type
-
-listings_all$room_type_private = ifelse(listingdet2$room_type == "Private room", 1, 0)
-listings_all$room_type_hotel = ifelse(listingdet2$room_type == "Hotel room", 1, 0)
-listings_all$room_type_entire = ifelse(listingdet2$room_type == "Entire home/apt", 1, 0)
-
-
+listings_all$room_type_private = ifelse(listings_all$room_type == "Private room", 1, 0)
+listings_all$room_type_hotel = ifelse(listings_all$room_type == "Hotel room", 1, 0)
+listings_all$room_type_entire = ifelse(listings_all$room_type == "Entire home/apt", 1, 0)
