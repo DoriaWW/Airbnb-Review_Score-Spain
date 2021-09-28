@@ -1,6 +1,6 @@
 ## Setup
-### install.packages("haven"); install.packages("googledrive"); install.packages("tidyverse"); install.packages("dplyr")
-library(haven); library(googledrive); library(tidyverse); library(dplyr)
+### install.packages("tidyverse"); install.packages("dplyr")
+library(tidyverse); library(dplyr)
 
 ## Add data into R
 listings_barcelona <- read.csv("../data/listings_barcelona.csv")
