@@ -70,12 +70,22 @@ The data used for this project is available at [Inside AirBnB](http://insideairb
 
 ## Resources
 
+The moderators can influence the relationship between the dependent variable and the independent variable. Each moderator can have a different effect. There are different studies that focus on either city size, room type, superhost or AirBnB in general.
+
+The city size can influence the amount of reviews a listing gets because of the people it attracts. Coyle and Yeung (2016) found that AirBnB listings in smaller cities bring more tourism to local communities, who otherwise would not come there. Whereas big and medium cities have listings that are more for economic and administrative functions (Adamiak et al. 2019). Big cities usually have more activities and more noise, according to Cheng and Jin (2019) this can lead to less (positive) reviews. 
+
+The room type can also influence the amount of review a listing gets. The size of a city influences the room type. Big and medium cities usually have more hotel rooms, private rooms, or shared rooms, whereas small cities have more entire homes (Adamiak et al. 2019). The room type, and the people who chose fore a certain room type, can influence the probability that they write a review for the listing.
+
+The status “Superhost” has an effect on the number of reviews and rating a listing gets (Liang et al. 2017). When a host has different qualities, such as a personal profile picture, it gets a superhost badge. The qualities make people trust them more and because of that they are more likely to leave reviews (Fleischer and Magen 2016; Liang et al. 2017). 
+
 There are multiple studies that focus on reviews on AirBnB. Studies worth mentioning are:
 - Bridges, J., & Vásquez, C. (2018). If nearly all Airbnb reviews are positive, does that make them meaningless?. Current Issues in Tourism, 21(18), 2057-2075.
   In the study the authors find that AirBnB reviews appear to be highly positive and therefor quite similar to one another. If reviews are quite similar, what is the added value that reviews bring to one listing? 
 - Ert, E., Fleischer, A., & Magen, N. (2016). Trust and reputation in the sharing economy: The role of personal photos in Airbnb. Tourism management, 55, 62-73.
 Fleischer and Magen find that the more trustworthy a host is perceived on their profile picture, the higher the price of the listing can be, and the probabilty of the listing being chosen. Furthermore, they find that the host's reputation, their online review scores, has less effect on the price or booking.
 - Liang, S., Schuckert, M., Law, R., & Chen, C. C. (2017). Be a “Superhost”: The importance of badge systems for peer-to-peer rental accommodations. Tourism management, 60, 454-465. This study focuses on the label "Superhost", a label that is given by AirBnB for a host with certain qualities, and how this label can impact listings review volume and ratings. "Superhosts" are more likely to receive reviews and higher ratings and guest are willing to pay more for these listings.
+- Coyle, D., & Yeung, T. (2016). Understanding Airbnb in fourteen European cities. The Jean-Jacques Laffont Digital Chair Working Papers, 7088, 1-33.
+- Adamiak, C., Szyda, B., Dubownik, A., & García-Álvarez, D. (2019). Airbnb offer in Spain—spatial analysis of the pattern and determinants of its distribution. ISPRS International Journal of Geo-Information, 8(3), 155.
   
 
 ## Contributors
