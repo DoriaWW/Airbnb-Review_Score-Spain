@@ -51,6 +51,15 @@ listings_menorca$city <- "Menorca"
 listings_sevilla$city <- "Sevilla"
 listings_valencia$city <- "Valencia"
 
+## Add size to city
+listings_barcelona$size <- "Big"
+listings_girona$size <- "Small"
+listings_madrid$size <- "Big"
+listings_malaga$size <- "Medium"
+listings_menorca$size <- "Small"
+listings_sevilla$size <- "Medium"
+listings_valencia$size <- "Medium"
+
 ## Adding dummy variable for city size small/medium/big
 listings_barcelona$size_small <- 0
 listings_barcelona$size_medium <- 0
@@ -68,7 +77,7 @@ listings_valencia$size_small <- 0
 listings_valencia$size_medium <- 1
 
 ## Selecting relevant columns and deleting missing values
-cols_to_keep =  c('host_is_superhost', 'room_type', 'number_of_reviews', 'review_scores_rating', 'review_scores_accuracy', 'review_scores_cleanliness', 'review_scores_checkin', 'review_scores_communication', 'review_scores_location', 'review_scores_value', 'city', 'size_small', 'size_medium', 'size_large')
+cols_to_keep =  c('host_is_superhost', 'room_type', 'number_of_reviews', 'review_scores_rating', 'review_scores_accuracy', 'review_scores_cleanliness', 'review_scores_checkin', 'review_scores_communication', 'review_scores_location', 'review_scores_value', 'city', 'size', 'size_small', 'size_medium', 'size_large')
 
 listings_barcelona <- na.omit(listings_barcelona[, which(colnames(listings_barcelona)%in%cols_to_keep)])
 listings_girona <- na.omit(listings_girona[, which(colnames(listings_girona)%in%cols_to_keep)])
