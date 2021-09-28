@@ -1,50 +1,36 @@
 ## Setup
-# install.packages("haven"); install.packages("googledrive"); install.packages("tidyverse"); install.packages("dplyr")
+### install.packages("haven"); install.packages("googledrive"); install.packages("tidyverse"); install.packages("dplyr")
 library(haven); library(googledrive); library(tidyverse); library(dplyr)
 
 ## Downloading the data
 dir.create(("data"), showWarnings = FALSE)
 data_id <-"11MaNZ2_XatX9OGZNkJnY9mWSPsZHuu3U"
 out_file <- "data/listings_barcelona.csv"
-drive_download(as_id(data_id), 
-               path = out_file, 
-               overwrite = TRUE)
+drive_download(as_id(data_id), path = out_file, overwrite = TRUE)
 
 data_id <-"1hSCeEx0FySiw2J8cEt6iAKDIoK-7KDxN"
 out_file <- "data/listings_girona.csv"
-drive_download(as_id(data_id), 
-               path = out_file, 
-               overwrite = TRUE)
+drive_download(as_id(data_id), path = out_file, overwrite = TRUE)
 
 data_id <-"1ftXX8qpWq0iXcAHN4SGzcY8BMWU0UrGV"
 out_file <- "data/listings_madrid.csv"
-drive_download(as_id(data_id), 
-               path = out_file, 
-               overwrite = TRUE)
+drive_download(as_id(data_id), path = out_file, overwrite = TRUE)
 
 data_id <-"10QZ9KuXmtIBdGUqv290vXY9ucTzrK8wR"
 out_file <- "data/listings_malaga.csv"
-drive_download(as_id(data_id), 
-               path = out_file, 
-               overwrite = TRUE)
+drive_download(as_id(data_id), path = out_file, overwrite = TRUE)
 
 data_id <-"1K3FaAC5wBwm71IH31z7L87TCSS2HTImS"
 out_file <- "data/listings_menorca.csv"
-drive_download(as_id(data_id), 
-               path = out_file, 
-               overwrite = TRUE)
+drive_download(as_id(data_id),  path = out_file, overwrite = TRUE)
 
 data_id <-"1zQmeH6kdUdXogeqQTb8avmkOA3BOgFG3"
 out_file <- "data/listings_sevilla.csv"
-drive_download(as_id(data_id), 
-               path = out_file, 
-               overwrite = TRUE)
+drive_download(as_id(data_id), path = out_file, overwrite = TRUE)
 
 data_id <-"1AJzjZAgHqYsVQu2P9tsC-M-zWwJoA7p-"
 out_file <- "data/listings_valencia.csv"
-drive_download(as_id(data_id), 
-               path = out_file, 
-               overwrite = TRUE)
+drive_download(as_id(data_id), path = out_file, overwrite = TRUE)
 rm(data_id, out_file)
 
 ## Add data into R
@@ -108,7 +94,8 @@ listings_all$room_type_private = ifelse(listings_all$room_type == "Private room"
 listings_all$room_type_hotel = ifelse(listings_all$room_type == "Hotel room", 1, 0)
 listings_all$room_type_entire = ifelse(listings_all$room_type == "Entire home/apt", 1, 0)
 
-# Reallocate columns
+## Reallocate columns
 listings_all <- listings_all[,c(1, 2, 14, 15, 16, 3, 4, 5, 6, 7, 8, 9, 10, 12, 13, 11)]
 
-
+## Output file
+write.csv(listings_all,"output/listings_all.csv", row.names = TRUE)
