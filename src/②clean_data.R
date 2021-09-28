@@ -71,9 +71,10 @@ rm(listings_barcelona,listings_girona,listings_madrid,listings_malaga,listings_m
 listings_all$room_type_private = ifelse(listings_all$room_type == "Private room", 1, 0)
 listings_all$room_type_hotel = ifelse(listings_all$room_type == "Hotel room", 1, 0)
 listings_all$room_type_entire = ifelse(listings_all$room_type == "Entire home/apt", 1, 0)
+listings_all$host_is_superhost = as.numeric(ifelse(listings_all$host_is_superhost == "t", 1, 0))
 
 ## Reallocate columns
-listings_all <- listings_all[,c(1, 2, 10, 11, 8, 3, 4, 17, 16, 15, 14, 12, 13, 9, 6, 7, 5)] # rename to actual column names; ?setorder
+listings_all <- listings_all[,c("host_is_superhost", "room_type", "room_type_private", "room_type_hotel", "room_type_entire", "number_of_reviews", "review_scores_rating", "review_scores_accuracy", "review_scores_cleanliness", "review_scores_checkin", "review_scores_communication", "review_scores_location", "review_scores_value", "city", "size", "size_small", "size_medium")]
 
 
 ## Output file

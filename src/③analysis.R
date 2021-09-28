@@ -5,7 +5,7 @@ library(ggplot2)
 listings <- read.csv("output/listings_all.csv")
 
 ##overview of the data
-Table <-listings_all %>%
+table_descriptives1 <- listings_all %>%
   group_by(size) %>%
   summarize(mean_reviews_rating = mean(review_scores_rating),
             mean_reviews_location = mean(review_scores_location),
@@ -14,7 +14,21 @@ Table <-listings_all %>%
             mean_reviews_cleanliness = mean(review_scores_cleanliness),
             mean_reviews_checkin = mean(review_scores_checkin),
             mean_reviews_communication = mean(review_scores_communication),
-            mean_reviews_accuracy = mean(review_scores_accuracy))
+            mean_reviews_accuracy = mean(review_scores_accuracy),
+            number_of_private_rooms = sum(room_type_private),
+            number_of_hotel_rooms = sum(room_type_hotel),
+            number_of_entire_rooms = sum(room_type_entire),
+            number_of_shared_rooms = sum((room_type_entire == 0) & (room_type_hotel ==0) & (room_type_private ==0)),
+            number_of_superhosts = sum(as.numeric(host_is_superhost)))
+
+table_descriptives2 <- listings_all %>%
+  group_by(size) %>%
+  count()
+
+table_descriptives <- table_descriptives1 %>%
+  inner_join(table_descriptives2, by = "size")
+
+table_descriptives <- mutate(ratio_superhosts = number_of_superhosts / n, table_descriptives)
 
 
 listings %>%  
