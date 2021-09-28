@@ -104,7 +104,7 @@ listings_all$room_type_hotel = ifelse(listings_all$room_type == "Hotel room", 1,
 listings_all$room_type_entire = ifelse(listings_all$room_type == "Entire home/apt", 1, 0)
 
 ## Reallocate columns
-listings_all <- listings_all[,c(1, 2, 14, 15, 16, 3, 4, 5, 6, 7, 8, 9, 10, 12, 13, 11)]
+listings_all <- listings_all[,c(1, 2, 10, 11, 8, 3, 4, 17, 16, 15, 14, 12, 13, 9, 6, 7, 5)]
 
 ## Output file
 write.csv(listings_all,"output/listings_all.csv", row.names = TRUE)

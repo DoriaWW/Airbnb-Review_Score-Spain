@@ -5,9 +5,16 @@ library(ggplot2)
 listings <- read.csv("output/listings_all.csv")
 
 ##overview of the data
-Table <-listings %>%
-  group_by(size_small, size_medium) %>%
-  summarize(mean_review_rating = mean(review_scores_rating))
+Table <-listings_all %>%
+  group_by(size) %>%
+  summarize(mean_reviews_rating = mean(review_scores_rating),
+            mean_reviews_location = mean(review_scores_location),
+            mean_reviews_value = mean(review_scores_value),
+            mean_number_of_reviews = mean(number_of_reviews),
+            mean_reviews_cleanliness = mean(review_scores_cleanliness),
+            mean_reviews_checkin = mean(review_scores_checkin),
+            mean_reviews_communication = mean(review_scores_communication),
+            mean_reviews_accuracy = mean(review_scores_accuracy))
 
 
 listings %>%  
