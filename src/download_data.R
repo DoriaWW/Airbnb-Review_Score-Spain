@@ -3,7 +3,7 @@ library(googledrive)
 library(haven)
 
 ## Create directory
-dir.create("../data", showWarnings = FALSE)
+dir.create("data", showWarnings = FALSE)
 
 ## Downloading the data
 downloads <- list(c(id = "11MaNZ2_XatX9OGZNkJnY9mWSPsZHuu3U", city = 'barcelona'),
@@ -17,7 +17,7 @@ downloads <- list(c(id = "11MaNZ2_XatX9OGZNkJnY9mWSPsZHuu3U", city = 'barcelona'
 
 for (file in downloads) {
   drive_download(as_id(file['id']), 
-                 path = paste0('../data/listings_', file['city'], '.csv'), overwrite = TRUE)
+                 path = paste0('data/listings_', file['city'], '.csv'), overwrite = TRUE)
 }
 
 

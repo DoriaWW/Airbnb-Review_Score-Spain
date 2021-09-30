@@ -3,13 +3,17 @@
 library(tidyverse); library(dplyr)
 
 ## Add data into R
-listings_barcelona <- read.csv("../data/listings_barcelona.csv")
-listings_girona <- read.csv("../data/listings_girona.csv")
-listings_madrid <- read.csv("../data/listings_madrid.csv")
-listings_malaga <- read.csv("../data/listings_malaga.csv")
-listings_menorca <- read.csv("../data/listings_menorca.csv")
-listings_sevilla <- read.csv("../data/listings_sevilla.csv")
-listings_valencia <- read.csv("../data/listings_valencia.csv")
+
+all_files <- list.files('data', pattern = 'listings', full.names=T)
+
+listings <- lapply(all_files, function(x) {
+  print(x)
+  df <- read.csv(x)
+  df$filename = x
+  
+  return(df)
+})
+
 
 ## Add column with city
 listings_barcelona$city <- "Barcelona"
