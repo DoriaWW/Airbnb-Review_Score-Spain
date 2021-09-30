@@ -82,5 +82,5 @@ listings_all <- listings_all[,c("host_is_superhost", "room_type", "room_type_pri
 
 
 ## Output file
-dir.create('../output')
-write.csv(listings_all,"../output/listings_all.csv", row.names = FALSE)
+dir.create("output")
+write.csv(listings_all,"output/listings_all.csv", row.names = FALSE)
