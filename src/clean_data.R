@@ -46,21 +46,6 @@ listings_menorca$size <- "Small"
 listings_sevilla$size <- "Medium"
 listings_valencia$size <- "Medium"
 
-## Adding dummy variable for city size small/medium/big
-listings_barcelona$size_small <- 0
-listings_barcelona$size_medium <- 0
-listings_girona$size_small <- 1
-listings_girona$size_medium <- 0
-listings_madrid$size_small <- 0
-listings_madrid$size_medium <- 0
-listings_malaga$size_small <- 0
-listings_malaga$size_medium <- 1
-listings_menorca$size_small <- 1
-listings_menorca$size_medium <- 0
-listings_sevilla$size_small <- 0
-listings_sevilla$size_medium <- 1
-listings_valencia$size_small <- 0
-listings_valencia$size_medium <- 1
 
 ## Selecting relevant columns and deleting missing values
 cols_to_keep =  c('host_is_superhost', 'room_type', 'number_of_reviews', 'review_scores_rating', 'review_scores_accuracy', 'review_scores_cleanliness', 'review_scores_checkin', 'review_scores_communication', 'review_scores_location', 'review_scores_value', 'city', 'size', 'size_small', 'size_medium', 'size_large')
@@ -84,11 +69,14 @@ listings_all <- rbind(listings_barcelona,
                       listings_valencia)
 rm(listings_barcelona,listings_girona,listings_madrid,listings_malaga,listings_menorca,listings_sevilla,listings_valencia)
 
-## Create dummy variable for room_type
+## Create dummy variable for moderators (room type, city size and superhost)
 listings_all$room_type_private = ifelse(listings_all$room_type == "Private room", 1, 0)
 listings_all$room_type_hotel = ifelse(listings_all$room_type == "Hotel room", 1, 0)
 listings_all$room_type_entire = ifelse(listings_all$room_type == "Entire home/apt", 1, 0)
+listings_all$size_small = ifelse(listings_all$size == "Small", 1, 0)
+listings_all$size_medium = ifelse(listings_all$size == "Medium", 1, 0)
 listings_all$host_is_superhost = as.numeric(ifelse(listings_all$host_is_superhost == "t", 1, 0))
+
 
 ## Reallocate columns
 listings_all <- listings_all[,c("host_is_superhost", "room_type", "room_type_private", "room_type_hotel", "room_type_entire", "number_of_reviews", "review_scores_rating", "review_scores_accuracy", "review_scores_cleanliness", "review_scores_checkin", "review_scores_communication", "review_scores_location", "review_scores_value", "city", "size", "size_small", "size_medium")]
