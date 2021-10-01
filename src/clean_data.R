@@ -3,6 +3,19 @@
 library(tidyverse); library(dplyr)
 
 ## Add data into R
+###Version1.
+
+listings_barcelona <- read.csv("data/listings_barcelona.csv")
+listings_girona <- read.csv("data/listings_girona.csv")
+listings_madrid <- read.csv("data/listings_madrid.csv")
+listings_malaga <- read.csv("data/listings_malaga.csv")
+listings_menorca <- read.csv("data/listings_menorca.csv")
+listings_sevilla <- read.csv("data/listings_sevilla.csv")
+listings_valencia <- read.csv("data/listings_valencia.csv")
+
+###Version2. (The code Hannes give, but merged everything together into a huge list. 
+##Then I actually don't know how to operate them anymore. While I'm figuring all. 
+##To load the data for analyze, please use the old version1)
 
 all_files <- list.files('data', pattern = 'listings', full.names=T)
 
