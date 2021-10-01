@@ -1,8 +1,12 @@
 ##library
 library(dplyr)
 library(ggplot2)
+library(fixest)
+library(broom)
+library(modelsummary)
+library(rlist)
 ##load data
-listings <- read.csv("output/listings_all.csv")
+listings_all <- read.csv("output/listings_all.csv")
 
 ##overview of the data
 table_descriptives1 <- listings_all %>%
@@ -47,6 +51,8 @@ superhost_descriptives <- listings_all %>%
   summarize(mean_number_reviews = mean(number_of_reviews), mean_rating = mean(review_scores_rating)) %>% 
   mutate_each(funs(round(.,0)), mean_number_reviews) %>% mutate_each(funs(round(.,2)), mean_rating)
 
+saveRDS(table_descriptives, file = "output/table_descriptives.RDS") 
+
 #This table shows that listings owned by a "superhost" (which is the case when host_is_superhost = 1) receive more than double the number of reviews than listings that are not owned by a "superhost". Moreover, the overall rating is quite higher for this group.
 
 room_type_descriptives <- listings_all %>%
@@ -66,7 +72,19 @@ size_descriptives <- listings_all %>%
 #In this table, it can be seen that the medium and large cities get way more reviews than smaller-sized cities. In terms of the overall rating, the three sizes score about the same. 
 
 
+## Regression
+regression <- feols(review_scores_rating ~ review_scores_location + review_scores_value + number_of_reviews + review_scores_cleanliness + review_scores_checkin + review_scores_communication + review_scores_accuracy
+                    |
+                      size,
+                    cluster = ~size,
+                    data = listings_all)
+tidy(regression, se = 'cluster', conf.int = TRUE)
+list.save(regression, 'output/regression.Rds')
 
+msummary(regression,
+         coef_omit = "Interc",
+         gof_omit = "AIC|BIC|Log|Pseudo|F",
+         output = "output/regression_table.png")
 
 
 listings_all %>%  
