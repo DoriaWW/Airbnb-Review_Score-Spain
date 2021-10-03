@@ -40,3 +40,8 @@ vignettes/*.pdf
 
 # CSV files
 **.csv
+
+# Output
+**.pdf
+**.Rds
+**.RDS
