@@ -1,17 +1,8 @@
 ## Setup
 ### install.packages("tidyverse"); install.packages("dplyr")
 library(tidyverse); library(dplyr)
-
+library(readr)
 ## Add data into R
-###Version1.
-
-listings_barcelona <- read.csv("data/listings_barcelona.csv")
-listings_girona <- read.csv("data/listings_girona.csv")
-listings_madrid <- read.csv("data/listings_madrid.csv")
-listings_malaga <- read.csv("data/listings_malaga.csv")
-listings_menorca <- read.csv("data/listings_menorca.csv")
-listings_sevilla <- read.csv("data/listings_sevilla.csv")
-listings_valencia <- read.csv("data/listings_valencia.csv")
 
 ###Version2. (The code Hannes give, but merged everything together into a huge list. 
 ##Then I actually don't know how to operate them anymore. While I'm figuring all. 
@@ -27,8 +18,35 @@ listings <- lapply(all_files, function(x) {
   return(df)
 })
 
+df(matrix(unlist(listings, nrow = length(listings), byrow = TRUE)))
+
 
 ## Add column with city
+library(stringr)
+lapply(listings, function(y){
+  words_matched = "data/listings_ .csv"
+  strsplit(words_matched, " ")
+  }
+)
+
+
+  separate (filename, into = c("delete", "city"), sep = "_")
+  str_replace_all("filename", pattern = "data/listings_", replacement = "-")[[1]]
+
+  
+## Selecting relevant columns and deleting missing values  
+cols_to_keep =  c('host_is_superhost', 'room_type', 'number_of_reviews', 'review_scores_rating', 'review_scores_accuracy', 'review_scores_cleanliness', 'review_scores_checkin', 'review_scores_communication', 'review_scores_location', 'review_scores_value', 'city', 'size', 'size_small', 'size_medium', 'size_large')
+listings[ , !(colnames(listings) %in% cols_to_keep)]
+
+listings <- lapply(listings, function(z){
+ listings[ , !(names(listings) %in% cols_to_keep)]
+})
+
+for (list in all_files){
+  list[ , !(colnames(list) %in% cols_to_keep)]
+}
+
+# oldcodes
 listings_barcelona$city <- "Barcelona"
 listings_girona$city <- "Girona"
 listings_madrid$city <- "Madrid"
