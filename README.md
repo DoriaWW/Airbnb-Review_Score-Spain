@@ -50,9 +50,15 @@ To run the files [Make](https://tilburgsciencehub.com/get/make) is needed . The 
 First, an overview of the packages used in this study is given:
 ```
 install.packages("readr")
-install.packages("readxl")
 install.packages("dplyr")
 install.packages("tidyverse")
+install.packages("haven")
+install.packages("googledrive")
+install.packages("ggplot2")
+install.packages("fixest")
+install.packages("broom")
+install.packages("modelsummary")
+install.packages("rlist")
 ```
 
 <!---

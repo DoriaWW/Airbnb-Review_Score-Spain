@@ -1,3 +1,5 @@
+### install.packages("ggplot2")；install.packages("fixest")；install.packages("broom");install.packages("modelsummary");install.packages("rlist")
+
 ##library
 library(dplyr)
 library(ggplot2)
