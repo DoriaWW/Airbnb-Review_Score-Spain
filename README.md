@@ -52,7 +52,12 @@ Second, summarize your results concisely. Make use of subheaders where appropria
 --> 
 ## Repository overview
 In this repository there is a Make-file that has to run to make all the maps up to date. All the scripts in this repository will run automatically with the Make-file 
-More information on the running of the make file can be found in the running instructions paragraph. 
+More information on the running of the make file can be found in the running instructions paragraph.
+
+The maps that can be found in this repository are:
+
+**Source**
+In the map source ("src") the code to prepare the date is stored.
 
 <!---
 Provide an overview of the directory structure and files.
