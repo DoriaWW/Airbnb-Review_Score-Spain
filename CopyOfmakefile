@@ -9,7 +9,7 @@ data/listings_barcelona.csv :src/download_data.R
 output/listings_all.csv:src/clean_data.R data/listings_barcelona.csv
 		R --vanilla <src/clean_data.R	
 		
-output/regression_table.png:src/analysis.R clean_data
+output/regression_table.png:src/analysis.R output/listings_all.csv
 		R --vanilla <src/analysis.R
 
 
