@@ -10,10 +10,10 @@ __Does the number of reviews that your listing is getting on AirBnB affect the a
 
 We all know the feeling of opening an e-mail that asks you to leave a review on a product that you just bought or a listing that you stayed the night at. But do more reviews lead to a higher review score? Furthermore, this effect is examined at cities in Spain that differ in sizes, such as Malaga compared to the capital Madrid. This code is written in order to find answers to these questions.
 
-The reason for diving into this problem is because review scores are an important factor for customers when they decide which listing to stay at. Hosts want a good review score and some push their guests to leave a review. The issue that arises is that more reviews does not necessarily result into a higher review score. This study is conducted in order to show hosts if they should or should not push their guests for reviews by analyzing the relationship between review score and number of reviews, while taking moderators and control variables into account. 
+The reason for diving into this problem is because review scores are an important factor for customers when they decide which listing to stay at. Hosts want a good review score and some push their guests to leave a review. The issue that arises is that more reviews may not necessarily lead to a higher review rating. This study is conducted in order to show hosts if they should or should not push their guests to leave reviews by analyzing the relationship between review score and the number of reviews, while taking certain moderators into account.
 
 The study focusses on seven different cities in Spain. To be able to examine the differences between small and big cities, there are three categories; Big, Medium or Small. The number of residents determine the category of the city:
-- A Big city has **more than** 1000000 (a million) residents
+- A Big city has **more than** 1000000 (one million) residents
 - A Medium city has **more than** 500000 residents
 - A Small city has **less than** 500000 residents
 
@@ -37,10 +37,10 @@ _"Explain choice of research methode"_
 
 **Moderators**
 
-The relationship between the number of reviews and actual review score may be influenced by other variables, which are integrated in the model as moderators. In this study, three moderators are considered: 
-1) The city size which is encoded using dummy variables. Each of the seven cities in Spain falls in either one of three categories; Big, Medium or Small, depending on the number of residents. 
-2) The Room type, there are four categories; Entire home/appartment, Hotel room, Private room or Shared room. 
-3) Superhost status, true or false
+The relationship between the number of reviews and actual review score may be influenced by other variables, which are integrated in the model as moderators. In this study, three moderators are considered, for which dummy coding is used.
+1) City size. Each of the seven cities in Spain falls in either one of three categories; Big, Medium or Small, depending on the number of residents as was mentioned before. The base level of this variable is the "big" size. 
+2) Room type. There are four categories in the dataset; Entire home/appartment, Hotel room, Private room or Shared room. In the dummy encoding, shared room is the base level. 
+3) Superhost status. The dataset includes information on whether the host of the listing is a superhost or not. Experienced hosts can become a superhost upon fulfillin certain criteria, such as having a low cancellation rate, a high response rate as well as a high overall rating based on the last 365 days [[Source airbnb]](https://www.airbnb.co.uk/help/article/829/how-do-i-become-a-superhost?_set_bev_on_new_domain=1631260549_OThiYmUyZjJhOGFk).
 
 **Results**
 
@@ -66,7 +66,7 @@ Provide an overview of the directory structure and files.
 ## Running instructions
 To run the files [Make](https://tilburgsciencehub.com/get/make) is needed . The directory works with make which should be run. Make sure to run the Make-file.
 Also [R-studio](https://tilburgsciencehub.com/get/r) is needed to run the R-files. 
-First, an overview of the packages used in this study is given:
+To run the code used in the study, the following packages need to be installed first:
 ```
 install.packages("readr")
 install.packages("dplyr")
