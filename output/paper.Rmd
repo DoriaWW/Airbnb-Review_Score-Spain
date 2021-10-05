@@ -1,0 +1,121 @@
+title: To review or not to review? That's the question
+Team members: 
+[Doria Wengting Wang](https://github.com/DoriaWW), [Inge Oostveen](https://github.com/IngeOostveen), [Ralph Delsing](https://github.com/RalphGit21), [Paulus Hovens](https://github.com/pphovens), [Wouter Floors](https://github.com/WouterFloors)
+
+abstract:
+ In this report, a comparison between Trump's voters' profile by county between 2016 and 2020 are conducted and a summary by topic of Trump's tweets in 2020 before the election day is given. By correlating the two database, it is found that Trump had disappointed quite some of his previous supporters in 2020 election compared with 2016 election but his political appealing through Tweets seems to be quite effective especially by engaging multi-cultural audience, which gained new supporters for him.
+
+bibliography: references.bib
+output: pdf_document
+header-includes: 
+- \usepackage{booktabs}
+
+---
+
+```{r, echo = FALSE}
+library(rlist)
+library(modelsummary)
+library(tinytex)
+```
+
+# Introduction
+
+# Motivation
+
+We all know the feeling of opening an e-mail that asks you to leave a review on a product that you just bought or a listing that you stayed the night at. But do more reviews lead to a higher review score? Furthermore, this effect is examined at cities in Spain that differ in sizes, such as Malaga compared to the capital Madrid. This code is written in order to find answers to these questions.
+
+The reason for diving into this problem is because review scores are an important factor for customers when they decide which listing to stay at. Hosts want a good review score and some push their guests to leave a review. The issue that arises is that more reviews does not necessarily result into a higher review score. This study is conducted in order to show hosts if they should or should not push their guests for reviews by analyzing the relationship between review score and number of reviews, while taking moderators and control variables into account.
+
+The study focusses on seven different cities in Spain. To be able to examine the differences between small and big cities, there are three categories; Big, Medium or Small. The number of residents determine the category of the city:
+
+A Big city has more than 1000000 (a million) residents
+A Medium city has more than 500000 residents
+A Small city has less than 500000 residents
+The cities:
+
+Big: Barcelona and Madrid
+
+Medium: Sevilla, Valencia and Malaga
+
+Small: Menorca and Girona
+
+
+# Data
+The data used for this project contains two parts. 
+Part I (henceforth will be referred as "Votes") and  Part II (henceforth will be referred as "Tweets").
+
+# Part I. Votes
+## Data Collection
+
+The first database, Votes is used for analyzing the county voters' profile is shared by another professor (Mrs.Aukje Wijnen).
+The database contains all records of votes for Trump in 2016 and 2020 in the unit of counties. The original data includes the actual votes count from each county and the county profiling characteristics, like population age distribution (under 5, 5 to 18, 65plus etc) and racial characteristics (like white, black, Asian, multiracial etc) as well as educational status(percent of highshcool/bachelor).
+
+## Data Processing
+
+
+```{r, echo = FALSE, fig.align='left', fig.cap= "Votes for Trump in 2020" , out.height= '160%'}
+knitr::include_graphics('../output/Overview-Trump2020.jpg')
+```
+```{r, echo = FALSE, fig.align='left', fig.cap= "Votes for Trump in 2016" , out.height= '160%'}
+knitr::include_graphics('../output/Overview-Trump2016.jpg')
+```
+
+
+```{r, echo = FALSE, fig.align='left', fig.cap= "Regression comparison table" , out.height= '80%'}
+knitr::include_graphics('../output/compare_table.png')
+```
+
+
+```{r, echo = FALSE, fig.align='right', fig.cap= "Regression comparison graph", out.height='90%'}
+knitr::include_graphics('../output/regression comparison.jpg')
+```
+
+
+
+# Methodology
+
+## Compare differences in difference (DiD)
+Even though the coefficients are not significant, DiD provided an easier solution to compare the differences between the two regression to discover how the relationship between the votes and county profile had changed. 
+
+## Correlation strategy
+Firstly, by combining the sentiments and volume of the tweets per topic, an in-depth insight of Trump's tweeting behavior pattern can be discovered.
+Secondly, by correlate the results of the county profile changes between the two elections and what Trump had been appealing to his audience, a causation relationship can be interpreted.
+
+
+# Results
+
+**Votes**
+
+* [Figure 1 & 2] The general take-away from this overview is the fact that Trump has lost about 1/6 of the votes from his previous (2016 election) top 5 supporter states. Which could indicate that people lost their faith in Trump from his 4 years political services and changed their believes. Although Trump also gained some new supports, especially from Indiana, California Washington, South Carolina and Missouri.
+
+* [Figure 3 & 4] Even though the regression of county profile on dependent variable total votes for Trump are not significant, the purpose of this project is to observe the changes between the two votes in county profile. Through comparison, all coefficient has increased in 2020 than 2016 except the "poverty". Salient increase is observed in the characteristics of white, black, multiracial, Hawaiian and foreign born. 
+
+Reflected back to the project, it can be concluded that even though Trumps previous votes seem to be disappointed at him with his political service in 2016 and quite some of them (around 1/6) lost their faith at Trump. But Trump still manage to attract new voters. Except American, it is apparent that Trump has successfully attracted new voters with foreign or multiracial background.
+
+**Tweets**
+
+
+# Conclusion
+
+1. Low satisfaction from Trump's previous presidential services in 2016 since he lost about 1/6 of the county votes which were his top 5 supporters in 2016.
+2. Decrease form poverty population imply that Trump's political service hasn't solved problem for the poor.
+3. By Using Tweets as a communication tool and positive "American" appeal to engage with audience is quite  effective since we could see growth of new voters/supporters for Trump. Among those new voters, Trump also Had successfully got some multiracial/multi-cultural audience by speaking their language frequently.
+
+## Managerial Relevance
+
+
+# Word Count {-}
+
+Number of Words: `r wordcountaddin::word_count("report.Rmd")`
+
+# References
+
+Graham, A., Cullen, F. T., Butler, L. C., Burton, A. L., & Burton, V. S. (2021). Who Wears the MAGA Hat? Racial Beliefs and Faith in Trump. Socius. [doi](https://doi.org/10.1177/2378023121992600)
+
+Holland, J., & Fermor, B. (2021). The discursive hegemony of Trump’s Jacksonian populism: Race, class, and gender in constructions and contestations of US national identity, 2016–2018. Politics, 41(1), 64–79. [doi](https://doi.org/10.1177/0263395720936867)
+
+Jaffe, S. (2018, January). Why did a majority of white women vote for Trump?. In New Labor Forum (Vol. 27, No. 1, pp. 18-26). Sage CA: Los Angeles, CA: SAGE Publications. [doi](https://doi.org/10.1177/1095796017744550)
+
+Smith, D. N., & Hanley, E. (2018). The Anger Games: Who Voted for Donald Trump in the 2016 Election, and Why? Critical Sociology, 44(2), 195–212. [doi](https://doi.org/10.1177/0896920517740615)
+
+# Appendix
