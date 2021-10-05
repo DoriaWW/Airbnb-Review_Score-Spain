@@ -4,9 +4,7 @@ library(tidyverse); library(dplyr)
 library(readr)
 ## Add data into R
 
-###Version2. (The code Hannes give, but merged everything together into a huge list. 
-##Then I actually don't know how to operate them anymore. While I'm figuring all. 
-##To load the data for analyze, please use the old version1)
+###Version2. 
 
 all_files <- list.files('data', pattern = 'listings', full.names=T)
 
@@ -18,10 +16,13 @@ listings <- lapply(all_files, function(x) {
   return(df)
 })
 
+
+
 df(matrix(unlist(listings, nrow = length(listings), byrow = TRUE)))
 
 
-## Add column with city
+## 1) Add column with city
+## rename variable under the lists
 library(stringr)
 lapply(listings, function(y){
   words_matched = "data/listings_ .csv"
@@ -29,12 +30,11 @@ lapply(listings, function(y){
   }
 )
 
-
-  separate (filename, into = c("delete", "city"), sep = "_")
   str_replace_all("filename", pattern = "data/listings_", replacement = "-")[[1]]
 
   
-## Selecting relevant columns and deleting missing values  
+## Selecting relevant columns and deleting missing values
+## incorrect number of dimensions 
 cols_to_keep =  c('host_is_superhost', 'room_type', 'number_of_reviews', 'review_scores_rating', 'review_scores_accuracy', 'review_scores_cleanliness', 'review_scores_checkin', 'review_scores_communication', 'review_scores_location', 'review_scores_value', 'city', 'size', 'size_small', 'size_medium', 'size_large')
 listings[ , !(colnames(listings) %in% cols_to_keep)]
 
