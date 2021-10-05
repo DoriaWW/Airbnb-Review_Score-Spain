@@ -29,24 +29,37 @@ _Small_: Menorca and Girona
 ## Method and results
 
 <!--- First, introduce and motivate your chosen method, and explain how it contributes to solving the research question/business problem. -->
+**Research methode**
+
+The research methode that is used in this project is regression analysis.
+
+_"Explain choice of research methode"_
+
+**Moderators**
 
 The relationship between the number of reviews and actual review score may be influenced by other variables, which are integrated in the model as moderators. In this study, three moderators are considered: 
 1) The city size which is encoded using dummy variables. Each of the seven cities in Spain falls in either one of three categories; Big, Medium or Small, depending on the number of residents. 
 2) The Room type, there are four categories; Entire home/appartment, Hotel room, Private room or Shared room. 
 3) Superhost status, true or false
 
+**Results**
 
-The results of this study are presented in a PDF report.
+The results of this study are presented in a PDF report. This is an useful and accessible way of showing the results. 
 
 <!---
 Second, summarize your results concisely. Make use of subheaders where appropriate.
 
+--> 
 ## Repository overview
+In this repository there is a Make-file that has to run to make all the maps up to date. All the scripts in this repository will run automatically with the Make-file 
+More information on the running of the make file can be found in the running instructions paragraph. 
 
+<!---
 Provide an overview of the directory structure and files.
--->
+--> 
 ## Running instructions
-To run the files [Make](https://tilburgsciencehub.com/get/make) is needed . The directory works with make which should be run. Also [R-studio](https://tilburgsciencehub.com/get/r) is needed to run the R-files. 
+To run the files [Make](https://tilburgsciencehub.com/get/make) is needed . The directory works with make which should be run. Make sure to run the Make-file.
+Also [R-studio](https://tilburgsciencehub.com/get/r) is needed to run the R-files. 
 First, an overview of the packages used in this study is given:
 ```
 install.packages("readr")
@@ -63,19 +76,8 @@ install.packages("rlist")
 
 <!---
 Explain to potential users how to run/replicate your workflow. Touch upon, if necessary, the required input data, which (secret) credentials are required (and how to obtain them), which software tools are needed to run the workflow (including links to the installation instructions), and how to run the workflow. Make use of subheaders where appropriate.
-
-## More resources
-
-Point interested users to any related literature and/or documentation.
 -->
-## About
-
-This study is conducted by project group 2 of the [Data Preparation and Workflow Management course](https://github.com/hannesdatta/course-dprep) of the TISEM department of Tilburg University. 
-The project is done in the fall 2021 version of the course. The project was part of a team project performed by Marketing Analytics master students. Professor [Hannes Datta](https://github.com/hannesdatta) contributed by providing helpful feedback during project feedback meetings.
-The data used for this project is available at [Inside AirBnB](http://insideairbnb.com/get-the-data.html)
-
 ## Resources
-
 The moderators can influence the relationship between the dependent variable and the independent variable. Each moderator can have a different effect. There are different studies that focus on either city size, room type, superhost or AirBnB in general.
 
 The city size can influence the amount of reviews a listing gets because of the people it attracts. Coyle and Yeung (2016) found that AirBnB listings in smaller cities bring more tourism to local communities, who otherwise would not come there. Whereas big and medium cities have listings that are more for economic and administrative functions (Adamiak et al. 2019). Big cities usually have more activities and more noise, according to Cheng and Jin (2019) this can lead to less (positive) reviews. 
@@ -92,6 +94,16 @@ Fleischer and Magen find that the more trustworthy a host is perceived on their 
 - Liang, S., Schuckert, M., Law, R., & Chen, C. C. (2017). Be a “Superhost”: The importance of badge systems for peer-to-peer rental accommodations. Tourism management, 60, 454-465. This study focuses on the label "Superhost", a label that is given by AirBnB for a host with certain qualities, and how this label can impact listings review volume and ratings. "Superhosts" are more likely to receive reviews and higher ratings and guest are willing to pay more for these listings.
 - Coyle, D., & Yeung, T. (2016). Understanding Airbnb in fourteen European cities. The Jean-Jacques Laffont Digital Chair Working Papers, 7088, 1-33.
 - Adamiak, C., Szyda, B., Dubownik, A., & García-Álvarez, D. (2019). Airbnb offer in Spain—spatial analysis of the pattern and determinants of its distribution. ISPRS International Journal of Geo-Information, 8(3), 155.
+
+<!---
+
+Point interested users to any related literature and/or documentation.
+-->
+## About
+
+This study is conducted by project group 2 of the [Data Preparation and Workflow Management course](https://github.com/hannesdatta/course-dprep) of the TISEM department of Tilburg University. 
+The project is done in the fall 2021 version of the course. The project was part of a team project performed by Marketing Analytics master students. Professor [Hannes Datta](https://github.com/hannesdatta) contributed by providing helpful feedback during project feedback meetings.
+The data used for this project is available at [Inside AirBnB](http://insideairbnb.com/get-the-data.html)
   
 
 ## Contributors
