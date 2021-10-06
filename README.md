@@ -72,16 +72,10 @@ To run the files [Make](https://tilburgsciencehub.com/get/make) is needed . The 
 Also [R-studio](https://tilburgsciencehub.com/get/r) is needed to run the R-files. 
 To run the code used in the study, the following packages need to be installed first:
 ```
-install.packages("readr")
 install.packages("dplyr")
-install.packages("tidyverse")
-install.packages("haven")
-install.packages("googledrive")
 install.packages("ggplot2")
-install.packages("fixest")
-install.packages("broom")
+install.packages("googledrive")
 install.packages("modelsummary")
-install.packages("rlist")
 ```
 
 <!---
