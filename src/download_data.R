@@ -20,4 +20,14 @@ for (file in downloads) {
                  path = paste0('data/listings_', file['city'], '.csv'), overwrite = TRUE)
 }
 
+## Add data into R
+all_files <- list.files('data', pattern = 'listings', full.names=T)
+listings <- lapply(all_files, function(x) {
+  print(x)
+  df <- read.csv(x)
+  df$filename = x
+  return(df)
+})
+combined_dataset = do.call('rbind', listings)
 
+write.csv(combined_dataset,"data/combined.csv", row.names = FALSE)

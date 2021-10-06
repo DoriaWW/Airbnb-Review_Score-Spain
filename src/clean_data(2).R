@@ -1,15 +1,8 @@
 ## Setup
 library(tidyverse); library(dplyr); library(readr)
 
-## Add data into R
-all_files <- list.files('data', pattern = 'listings', full.names=T)
-listings <- lapply(all_files, function(x) {
-  print(x)
-  df <- read.csv(x)
-  df$filename = x
-  return(df)
-})
-combined_dataset = do.call('rbind', listings)
+## load combined dataset
+combined_dataset <- read.csv("data/combined.csv")
 
 ## Modify city name
 combined_dataset$city = gsub('data[/]listings[_]', '', combined_dataset$filename)
