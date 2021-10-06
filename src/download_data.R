@@ -27,6 +27,6 @@ listings <- lapply(all_files, function(x) {
 })
 
 ## Combining and saving the dataset
-listings_all_raw = do.call('rbind', listings)
+listings_all_raw = do.call('rbind', listings); rm(downloads); rm(file); rm(all_files); rm(listings)
 dir.create("temp", showWarnings = FALSE)
-write.csv(listings_all_raw,"temp/listings_all_raw.csv", row.names = FALSE)
+write.csv(listings_all_raw,"temp/listings_all_raw.csv", row.names = FALSE); rm(listings_all_raw)

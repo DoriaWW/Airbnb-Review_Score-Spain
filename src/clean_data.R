@@ -5,7 +5,7 @@ listings_all$city = gsub('[.]csv', '', listings_all$city)
 
 ## Extract columns and delete missing values
 cols_to_keep =  c('host_is_superhost', 'room_type', 'number_of_reviews', 'review_scores_rating', 'city')
-listings_all <- na.omit(listings_all[ , (colnames(listings_all) %in% cols_to_keep)]); #rm(listings); rm(all_files); rm(cols_to_keep)
+listings_all <- na.omit(listings_all[ , (colnames(listings_all) %in% cols_to_keep)]); rm(cols_to_keep)
 
 ## Add city size
 listings_all[listings_all$city %in% c("barcelona", "madrid"), "city_size"] <- "Big"
