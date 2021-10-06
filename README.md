@@ -31,9 +31,7 @@ _Small_: Menorca and Girona
 <!--- First, introduce and motivate your chosen method, and explain how it contributes to solving the research question/business problem. -->
 **Research methode**
 
-The research methode that is used in this project is regression analysis.
-
-_"Explain choice of research methode"_
+The research methode that is used in this project is a regression analysis. This method is used to predict the influence of the independent variable amount of reviews on the dependent variable review score. In the model the moderators city size, room type and the quasi-moderator superhost status are analysed. By using regression there can, or cannot, be concluded if there is a correlation between the variables and what the exact regression is. With this information the research question is answered.
 
 **Moderators**
 
@@ -61,6 +59,10 @@ The maps that can be found in this repository are:
 **Source**
 
 In the map source ("src") the code to prepare the date is stored.
+
+**Output**
+
+In the map output the result of the study is shown in a Rmd file.
 
 <!---
 Provide an overview of the directory structure and files.
