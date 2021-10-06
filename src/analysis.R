@@ -1,5 +1,5 @@
 ## Setup
-library(dplyr); library(ggplot2); library(broom); library(modelsummary); library(rlist)
+library(dplyr); library(modelsummary); library(ggplot2)
 listings_all <- read.csv("temp/listings_all.csv")
 
 ## Overview of the data

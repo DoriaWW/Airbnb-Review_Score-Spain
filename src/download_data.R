@@ -1,5 +1,5 @@
 ## Setup
-library(googledrive); library(haven)
+library(googledrive)
 
 ## Downloading the data
 dir.create("data", showWarnings = FALSE)
