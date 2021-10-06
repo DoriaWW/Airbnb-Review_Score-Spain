@@ -42,7 +42,7 @@ The relationship between the number of reviews and actual review score may be in
 2) Room type. There are four categories in the dataset; Entire home/appartment, Hotel room, Private room or Shared room. In the dummy encoding, shared room is the base level. 
 3) Superhost status. The dataset includes information on whether the host of the listing is a superhost or not. Experienced hosts can become a superhost upon fulfillin certain criteria, such as having a low cancellation rate, a high response rate as well as a high overall rating based on the last 365 days [[Source airbnb]](https://www.airbnb.co.uk/help/article/829/how-do-i-become-a-superhost?_set_bev_on_new_domain=1631260549_OThiYmUyZjJhOGFk).
 
-[Conceptual model](https://user-images.githubusercontent.com/89775376/136205600-c231b17e-0aad-4e24-bfa0-8529f05489b2.png)
+![Conceptual model](https://user-images.githubusercontent.com/89775376/136205600-c231b17e-0aad-4e24-bfa0-8529f05489b2.png)
 
 **Results**
 
