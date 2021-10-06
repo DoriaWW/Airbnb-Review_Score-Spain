@@ -4,7 +4,7 @@
 library(dplyr); library(ggplot2); library(broom); library(modelsummary); library(rlist)
 
 ##load data
-listings_all <- read.csv("temp/listings_all.csv")
+listings_all <- read.csv("output/listings_all.csv")
 
 ##overview of the data
 table_descriptives1 <- listings_all %>%
