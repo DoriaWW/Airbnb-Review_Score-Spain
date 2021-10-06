@@ -25,7 +25,7 @@ We all know the feeling of opening an e-mail that asks you to leave a review on 
 
 The reason for diving into this problem is because review scores are an important factor for customers when they decide which listing to stay at. Hosts want a good review score and some push their guests to leave a review. The issue that arises is that more reviews does not necessarily result into a higher review score. This study is conducted in order to show hosts if they should or should not push their guests for reviews by analyzing the relationship between review score and number of reviews, while taking moderators and control variables into account.
 
-The study focusses on seven different cities in Spain. To be able to examine the differences between small and big cities, there are three categories; Big, Medium or Small. The number of residents determine the category of the city:
+The study focuses on seven different cities in Spain. To be able to examine the differences between small and big cities, there are three categories; Big, Medium or Small. The number of residents determine the category of the city:
 
 A Big city has more than 1000000 (a million) residents
 A Medium city has more than 500000 residents
@@ -41,16 +41,20 @@ Small: Menorca and Girona
 
 # Data
 
-# Part I. Votes
 ## Data Collection
-
+The data is collected from AirBNB in order to analyze if the number of reviews has a effect on the review score. The data contains all listings in a specific city with data about the listing, the host, review scores and much more. The data is downloaded from the web and stored in a Google Drive in order to be accessed at any point in time (see src/download_data.R).
 
 ## Data Processing
-
+In order to analyze the data a new dataset was created by combining the separate cities' listings. Missing values were deleted <<Put something about the missing values here and that it happened in relative fashion >>. A city ID column is added to keep track of which city a listing  belongs to. Irrelevant columns have been removed, while dummy variables for the moderators have been added.
 
 
 # Methodology
 
+The relationship between the number of reviews and actual review score may be influenced by other variables, which are integrated in the model as moderators. In this study, three moderators are considered which are city size, room type, & superhost.
+
+City size: Each of the seven cities in Spain falls in either one of three categories; Big, Medium or Small, depending on the number of residents as was mentioned before. The base level of this variable is the "big" size.
+Room type: There are four categories in the dataset; Entire home/apartment, Hotel room, Private room or Shared room. In the dummy encoding, shared room is the base level.
+Superhost status. The dataset includes information on whether the host of the listing is a superhost or not. Experienced hosts can become a superhost upon fulfilling certain criteria, such as having a low cancellation rate, a high response rate as well as a high overall rating based on the last 365 days.
 
 
 
