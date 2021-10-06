@@ -1,11 +1,8 @@
-##install.packages("haven"); install.packages("googledrive"); 
-library(googledrive)
-library(haven)
-
-## Create directory
-dir.create("data", showWarnings = FALSE)
+## Setup
+library(googledrive); library(haven)
 
 ## Downloading the data
+dir.create("data", showWarnings = FALSE)
 downloads <- list(c(id = "11MaNZ2_XatX9OGZNkJnY9mWSPsZHuu3U", city = 'barcelona'),
                   c(id = "1hSCeEx0FySiw2J8cEt6iAKDIoK-7KDxN", city = 'girona'),
                   c(id = "1ftXX8qpWq0iXcAHN4SGzcY8BMWU0UrGV", city = 'madrid'),
@@ -28,6 +25,8 @@ listings <- lapply(all_files, function(x) {
   df$filename = x
   return(df)
 })
-combined_dataset = do.call('rbind', listings)
 
-write.csv(combined_dataset,"data/combined.csv", row.names = FALSE)
+## Combining and saving the dataset
+listings_all_raw = do.call('rbind', listings)
+dir.create("temp", showWarnings = FALSE)
+write.csv(listings_all_raw,"temp/listings_all_raw.csv", row.names = FALSE)
