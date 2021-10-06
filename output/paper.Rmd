@@ -1,4 +1,4 @@
-title: To review or not to review? That's the question
+Title: To review or not to review? That's the question
 Team members: 
 [Doria Wengting Wang](https://github.com/DoriaWW), [Inge Oostveen](https://github.com/IngeOostveen), [Ralph Delsing](https://github.com/RalphGit21), [Paulus Hovens](https://github.com/pphovens), [Wouter Floors](https://github.com/WouterFloors)
 
@@ -15,7 +15,6 @@ header-includes:
 ```{r, echo = FALSE}
 library(rlist)
 library(modelsummary)
-library(tinytex)
 ```
 
 # Introduction
@@ -49,26 +48,11 @@ Small: Menorca and Girona
 ## Data Processing
 
 
-```{r, echo = FALSE, fig.align='left', fig.cap= "Votes for Trump in 2020" , out.height= '160%'}
-knitr::include_graphics('../output/Overview-Trump2020.jpg')
-```
-```{r, echo = FALSE, fig.align='left', fig.cap= "Votes for Trump in 2016" , out.height= '160%'}
-knitr::include_graphics('../output/Overview-Trump2016.jpg')
-```
-
-
-```{r, echo = FALSE, fig.align='left', fig.cap= "Regression comparison table" , out.height= '80%'}
-knitr::include_graphics('../output/compare_table.png')
-```
-
-
-```{r, echo = FALSE, fig.align='right', fig.cap= "Regression comparison graph", out.height='90%'}
-knitr::include_graphics('../output/regression comparison.jpg')
-```
-
-
 
 # Methodology
+
+
+
 
 ## Compare differences in difference (DiD)
 
@@ -76,10 +60,15 @@ knitr::include_graphics('../output/regression comparison.jpg')
 
 # Results
 
-**Votes**
+(Put the regression model here)
 
-* [Figure 1 & 2] The general take-away from this overview is the fact that Trump has lost about 1/6 of the votes from his previous (2016 election) top 5 supporter states. Which could indicate that people lost their faith in Trump from his 4 years political services and changed their believes. Although Trump also gained some new supports, especially from Indiana, California Washington, South Carolina and Missouri.
+From the regression model, the individual outputs for the moderators are interpreted:
 
+Moderator 1: The predicted rating including only the first moderator, host_is_superhost becomes: rating = 4.272 + .387 x host_is_superhost + .0015 x nr_of_reviews - .0013 x host_is_superhost x nr_of_reviews. If the host of a listing is a superhost, this variable is coded as a "1". Thus, the rating for a superhost is 4.272 + .387 + nr_of_reviews x (.0015 - .0013) = 4.659 + .0002 * nr_of_reviews, whereas the rating of a listing from someone who is not a superhost is 4.272 + .0015 x nr_of_reviews. Despite the interaction effect being negative (-.0013), the predicted ratings for superhosts are clearly higher. Moreover, this effect is highly significant (p<.01)
+
+Moderator 2: For the second moderator, room_type, the results are statistically insignificant (p=.95, p=.34, p=.83). Thus, no further work is needed on this moderator, as this moderator does not influence the relationship between the rating and the number of reviews.
+
+Moderator 3: Finally, the last moderator includes the city size. As for moderator 1, these interaction effects are highly significant (p<.01). The predicted rating including this moderator is as follows: 4.272 + .0015 x nr_of_reviews + .037 x size_small + .072 x size_medium + .0007 x nr_of_reviews x size_small - .0003 x nr_of_reviews * size_medium. From the output based on the moderators implemented as independent variables, it can be seen that they are significantly larger than for the base level (which is size_large). Thus, these small and medium sized cities are rated significantly higher than larger cities. However, looking at the interaction effects for these two columns, despite being statistically significant, are so small (.0007 and -.0003) that they only influence the relationship between the rating and number of reviews minimally. 
 
 
 
@@ -91,11 +80,9 @@ knitr::include_graphics('../output/regression comparison.jpg')
 
 # Word Count {-}
 
-Number of Words: `r wordcountaddin::word_count("report.Rmd")`
+Number of Words:
 
 # References
-
-Graham, A., Cullen, F. T., Butler, L. C., Burton, A. L., & Burton, V. S. (2021). Who Wears the MAGA Hat? Racial Beliefs and Faith in Trump. Socius. [doi](https://doi.org/10.1177/2378023121992600)
 
 
 # Appendix

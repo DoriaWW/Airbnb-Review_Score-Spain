@@ -1,10 +1,10 @@
-### install.packages("ggplot2")；install.packages("fixest")；install.packages("broom");install.packages("modelsummary");install.packages("rlist")
+### install.packages("ggplot2")；install.packages("broom");install.packages("modelsummary");install.packages("rlist")
 
 ##library
-library(dplyr); library(ggplot2); library(fixest); library(broom); library(modelsummary); library(rlist)
+library(dplyr); library(ggplot2); library(broom); library(modelsummary); library(rlist)
 
 ##load data
-listings_all <- read.csv("output/listings_all.csv")
+listings_all <- read.csv("temp/listings_all.csv")
 
 ##overview of the data
 table_descriptives1 <- listings_all %>%
@@ -71,12 +71,10 @@ saveRDS(size_descriptives, file = "output/size_descriptives.RDS")
 ## Regression
 regression <- lm(review_scores_rating ~ host_is_superhost*number_of_reviews + room_type_private*number_of_reviews + room_type_hotel*number_of_reviews + room_type_entire*number_of_reviews + size_small*number_of_reviews + size_medium*number_of_reviews, listings_all)
 summary(regression)
+msummary(regression)
 
-#The regression output shows that the moderators, when viewing them as independent variables are significant, except for the number of reviews (B=1.46*10-3, p=.06). Furthermore, when looking at how the moderators
-#influence the relationship between the rating and the number of reviews, it can be seen that the superhost and city size moderators are significant (p<.01), whereas the room type is not significant at all. 
-
-
-listings_all %>% 
+## Plotting the number of reviews against the rating
+plot <- listings_all %>% 
   ggplot(aes(x = number_of_reviews, y = review_scores_rating)) +
   geom_point() + 
   xlab("Number of reviews") +
@@ -85,22 +83,8 @@ listings_all %>%
   
 
   
-  
-  
-  
-  
-  
-  
-  
-regression <- feols(review_scores_rating ~ review_scores_location + review_scores_value + number_of_reviews + review_scores_cleanliness + review_scores_checkin + review_scores_communication + review_scores_accuracy
-                      |
-                        size,
-                      cluster = ~size,
-                      data = listings_all)
-tidy(regression, se = 'cluster', conf.int = TRUE)
-list.save(regression, 'output/regression.Rds')
 
-msummary(regression,
-           coef_omit = "Interc",
-           gof_omit = "AIC|BIC|Log|Pseudo|F",
-           output = "output/regression_table.png")
+#msummary(regression,
+          # coef_omit = "Interc",
+          # gof_omit = "AIC|BIC|Log|Pseudo|F",
+          # output = "output/regression_table.png")
