@@ -28,11 +28,11 @@ The reason for diving into this problem is because review scores are an importan
 
 The study focuses on seven different cities in Spain. To be able to examine the differences between small and big cities, there are three categories; Big, Medium or Small. The number of residents determine the category of the city:
 
-A Big city has more than 1000000 (a million) residents --> Barcelona and Madrid
+A Big city has more than 1,000,000 (a million) residents --> Barcelona and Madrid
 
-A Medium city has more than 500000 residents --> Sevilla, Valencia and Malaga
+A Medium city has more than 500,000 residents --> Sevilla, Valencia and Malaga
 
-A Small city has less than 500000 residents --> Menorca and Girona
+A Small city has less than 500,000 residents --> Menorca and Girona
 
 
 # Data
@@ -58,8 +58,11 @@ The relationship between the number of reviews and actual review score may be in
 # Results
 
 First, an overall descriptives table was made for both the total dataset and the dataset grouped by size, showing variables such as the mean rating, mean number of reviews, ratio of superhosts etc. This table looks as follows:
-```
-readRDS(table_descriptives)
+
+```{r echo=FALSE, cache=FALSE}
+getwd()
+table_descriptives <- readRDS("table_descriptives.RDS") 
+
 ``` 
 Moreover, three individual tables were made that show the average rating and number of reviews for the cleaned dataset, grouped by the three moderators.
 ```
@@ -72,15 +75,15 @@ The first table shows that the number of reviews for listings that belong to a s
 
 Next, a plot of the cleaned dataset was made to visually inspect the data. As the number of reviews goes up, it seems that the rating goes up. The plot would suggest some sort of exponential function.
 
-```
-readRDS(plot)
+```{r,echo=FALSE, cache=FALSE,fig.align='center', fig.cap= "Rating scores"}
+knitr::include_graphics('Overview of rating scores.jpg')
 ```
 
 
 Finally, a regression model is created, shown below:
 
 ```
-msummary(regression)
+readr::write_rds(regression_output, 'output/Regression model.Rds')
 ```
 
 From the regression model, the individual outputs for the moderators are interpreted:
