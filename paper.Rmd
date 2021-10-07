@@ -61,16 +61,16 @@ The relationship between the number of reviews and actual review score may be in
 First, an overall descriptives table was made for both the total dataset and the dataset grouped by size, showing variables such as the mean rating, mean number of reviews, ratio of superhosts etc. This table looks as follows:
 
 ```{r, echo=FALSE, cache=FALSE}
-table_descriptives<-readRDS("table_descriptives.RDS")
+table_descriptives<-readRDS("gen/output/table_descriptives.RDS")
 knitr::kable(table_descriptives)
 ``` 
 Moreover, three individual tables were made that show the average rating and number of reviews for the cleaned dataset, grouped by the three moderators.
 ```{r, echo=FALSE, cache=FALSE}
-superhost_descriptives<-readRDS("superhost_descriptives.RDS")
+superhost_descriptives<-readRDS("gen/output/superhost_descriptives.RDS")
 knitr::kable(superhost_descriptives)
-room_type_descriptives<-readRDS("room_type_descriptives.RDS")
+room_type_descriptives<-readRDS("gen/output/room_type_descriptives.RDS")
 knitr::kable(room_type_descriptives)
-city_size_descriptives<-readRDS("city_size_descriptives.RDS")
+city_size_descriptives<-readRDS("gen/output/city_size_descriptives.RDS")
 knitr::kable(city_size_descriptives)
 ```
 

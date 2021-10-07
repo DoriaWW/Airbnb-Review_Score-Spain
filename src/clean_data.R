@@ -1,5 +1,5 @@
 ## Add city ID
-listings_all <- read.csv("temp/listings_all_raw.csv")
+listings_all <- read.csv("gen/temp/listings_all_raw.csv")
 listings_all$city = gsub('data[/]listings[_]', '', listings_all$filename)
 listings_all$city = gsub('[.]csv', '', listings_all$city)
 
@@ -24,4 +24,4 @@ listings_all$host_is_superhost = as.numeric(ifelse(listings_all$host_is_superhos
 listings_all <- listings_all[,c("city", "review_scores_rating", "number_of_reviews", "host_is_superhost", "room_type", "room_type_private", "room_type_hotel", "room_type_entire", "city_size", "city_size_small", "city_size_medium")]
 
 ## Output file
-write.csv(listings_all,"temp/listings_all.csv", row.names = FALSE)
+write.csv(listings_all,"gen/temp/listings_all.csv", row.names = FALSE)
