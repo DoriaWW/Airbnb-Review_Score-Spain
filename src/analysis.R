@@ -1,5 +1,7 @@
 ## Setup
-library(dplyr); library(modelsummary); library(ggplot2)
+library(dplyr); library(modelsummary); library(ggplot2); library(rlist)
+
+## load file
 listings_all <- read.csv("temp/listings_all.csv")
 
 ## Overview of the data
@@ -59,7 +61,6 @@ city_size_descriptives <- listings_all %>%
 
 saveRDS(city_size_descriptives, file = "output/city_size_descriptives.RDS") 
 
-
 ## Plotting the number of reviews against the rating
 plot <- listings_all %>% 
   ggplot(aes(x = number_of_reviews, y = review_scores_rating)) +
@@ -67,7 +68,7 @@ plot <- listings_all %>%
   xlab("Number of reviews") +
   ylab("Overall rating") +
   ggtitle("Overview of rating scores")
-
+ggsave("output/Overview of rating scores.jpg", height = 10, width = 15, units = "in")
 
 ## Regression
 regression <- lm(review_scores_rating ~ host_is_superhost*number_of_reviews + room_type_private*number_of_reviews + room_type_hotel*number_of_reviews + room_type_entire*number_of_reviews + city_size_small*number_of_reviews + city_size_medium*number_of_reviews, listings_all)
@@ -77,6 +78,5 @@ regression_output <- msummary(regression,
                               estimate = "{estimate}{stars} | ({std.error})",
                               statistic = NULL,
                               gof_omit = "AIC|BIC|Log|Pseudo|F")
-
-
+list.save(regression_output, 'output/Regression model.Rds')
 

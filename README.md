@@ -76,6 +76,7 @@ install.packages("dplyr")
 install.packages("ggplot2")
 install.packages("googledrive")
 install.packages("modelsummary")
+install.packages("rlist")
 ```
 
 <!---
