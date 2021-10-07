@@ -16,6 +16,7 @@ header-includes:
 ```{r, echo = FALSE}
 library(rlist)
 library(modelsummary)
+library(dplyr)
 ```
 
 # Introduction
@@ -59,16 +60,14 @@ The relationship between the number of reviews and actual review score may be in
 
 First, an overall descriptives table was made for both the total dataset and the dataset grouped by size, showing variables such as the mean rating, mean number of reviews, ratio of superhosts etc. This table looks as follows:
 
-```{r echo=FALSE, cache=FALSE}
-getwd()
-table_descriptives <- readRDS("table_descriptives.RDS") 
-
+```{r, echo=FALSE, cache=FALSE}
+knitr::kable(table_descriptives)
 ``` 
 Moreover, three individual tables were made that show the average rating and number of reviews for the cleaned dataset, grouped by the three moderators.
-```
-readRDS(superhost_descriptives)
-readRDS(room_type_descriptives)
-readRDS(city_size_descriptives)
+```{r, echo=FALSE, cache=FALSE}
+knitr::kable(superhost_descriptives)
+knitr::kable(room_type_descriptives)
+knitr::kable(city_size_descriptives)
 ```
 
 The first table shows that the number of reviews for listings that belong to a superhost receive more than double the number of reviews (67 vs 30) and receive quite higher ratings (4.82 vs 4.47). the second table shows that room types "Entire home" and "private room" get almost double the number of reviews compared to "shared room" and "hotel room". No significant difference in terms of ratings can be seen between these room types, although shared rooms stands out a little bit in last place. The first table that was created including the entire dataset did show that there way more entire homes and private rooms than hotel rooms and shared rooms. The reason for these latter 2 being less common could also explain why these receive less reviews. Finally, the last table shows that listings in large and medium sized cities receive more than double the amount of reviews than listings that are established in smaller cities. In terms of the overall rating, the three sizes score about the same.
@@ -82,8 +81,8 @@ knitr::include_graphics('Overview of rating scores.jpg')
 
 Finally, a regression model is created, shown below:
 
-```
-readr::write_rds(regression_output, 'output/Regression model.Rds')
+```{r,echo=FALSE, cache=FALSE,fig.align='center'}
+knitr::include_graphics('regression.png')
 ```
 
 From the regression model, the individual outputs for the moderators are interpreted:

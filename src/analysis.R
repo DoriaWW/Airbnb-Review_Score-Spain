@@ -72,11 +72,12 @@ ggsave("output/Overview of rating scores.jpg", height = 10, width = 15, units = 
 
 ## Regression
 regression <- lm(review_scores_rating ~ host_is_superhost*number_of_reviews + room_type_private*number_of_reviews + room_type_hotel*number_of_reviews + room_type_entire*number_of_reviews + city_size_small*number_of_reviews + city_size_medium*number_of_reviews, listings_all)
-regression_output <- msummary(regression,
-                              title = "Regression model",
-                              fmt = 4,
-                              estimate = "{estimate}{stars} | ({std.error})",
-                              statistic = NULL,
-                              gof_omit = "AIC|BIC|Log|Pseudo|F")
-list.save(regression_output, 'output/Regression model.Rds')
+msummary(regression,
+              title = "Regression model",
+              fmt = 4,
+              estimate = "{estimate}{stars} | ({std.error})",
+              statistic = NULL,
+              gof_omit = "AIC|BIC|Log|Pseudo|F",
+              output = "output/regression.png")
+
 
