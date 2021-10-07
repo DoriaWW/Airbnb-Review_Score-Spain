@@ -45,3 +45,6 @@ vignettes/*.pdf
 **.pdf
 **.Rds
 **.RDS
+**.jpg
+**.jpeg
+**.png
