@@ -42,7 +42,6 @@ superhost_descriptives <- listings_all %>%
   mutate_each(funs(round(.,0)), mean_number_reviews) %>% mutate_each(funs(round(.,2)), mean_rating)
 
 saveRDS(superhost_descriptives, file = "output/superhost_descriptives.RDS") 
-## This table shows that listings owned by a "superhost" (which is the case when host_is_superhost = 1) receive more than double the number of reviews than listings that are not owned by a "superhost". Moreover, the overall rating is quite higher for this group.
 
 room_type_descriptives <- listings_all %>%
   group_by(room_type) %>%
@@ -51,7 +50,6 @@ room_type_descriptives <- listings_all %>%
   arrange(desc(mean_number_reviews, mean_rating))
 
 saveRDS(room_type_descriptives, file = "output/room_type_descriptives.RDS") 
-## This table shows that room types "Entire home" and "private room" get almost double the amount of reviews compared to "shared room" and "hotel room". No significant difference in terms of ratings can be seen between these room types, although shared rooms stands out a little bit in last place.
 
 city_size_descriptives <- listings_all %>%
   group_by(city_size) %>%
@@ -60,12 +58,7 @@ city_size_descriptives <- listings_all %>%
   arrange(desc(mean_number_reviews, mean_rating)) %>% arrange(city_size)
 
 saveRDS(city_size_descriptives, file = "output/city_size_descriptives.RDS") 
-##In this table, it can be seen that the medium and large cities get way more reviews than smaller-sized cities. In terms of the overall rating, the three sizes score about the same. 
 
-## Regression
-regression <- lm(review_scores_rating ~ host_is_superhost*number_of_reviews + room_type_private*number_of_reviews + room_type_hotel*number_of_reviews + room_type_entire*number_of_reviews + city_size_small*number_of_reviews + city_size_medium*number_of_reviews, listings_all)
-summary(regression)
-msummary(regression)
 
 ## Plotting the number of reviews against the rating
 plot <- listings_all %>% 
@@ -74,11 +67,16 @@ plot <- listings_all %>%
   xlab("Number of reviews") +
   ylab("Overall rating") +
   ggtitle("Overview of rating scores")
-  
 
-  
 
-#msummary(regression,
-          # coef_omit = "Interc",
-          # gof_omit = "AIC|BIC|Log|Pseudo|F",
-          # output = "output/regression_table.png")
+## Regression
+regression <- lm(review_scores_rating ~ host_is_superhost*number_of_reviews + room_type_private*number_of_reviews + room_type_hotel*number_of_reviews + room_type_entire*number_of_reviews + city_size_small*number_of_reviews + city_size_medium*number_of_reviews, listings_all)
+regression_output <- msummary(regression,
+                              title = "Regression model",
+                              fmt = 4,
+                              estimate = "{estimate}{stars} | ({std.error})",
+                              statistic = NULL,
+                              gof_omit = "AIC|BIC|Log|Pseudo|F")
+
+
+
