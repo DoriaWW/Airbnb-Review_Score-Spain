@@ -13,9 +13,9 @@ We all know the feeling of opening an e-mail that asks you to leave a review on 
 The reason for diving into this problem is because review scores are an important factor for customers when they decide which listing to stay at. Hosts want a good review score and some push their guests to leave a review. The issue that arises is that more reviews may not necessarily lead to a higher review rating. This study is conducted in order to show hosts if they should or should not push their guests to leave reviews by analyzing the relationship between review score and the number of reviews, while taking certain moderators into account.
 
 The study focusses on seven different cities in Spain. To be able to examine the differences between small and big cities, there are three categories; Big, Medium or Small. The number of residents determine the category of the city:
-- A Big city has **more than** 1000000 (one million) residents
-- A Medium city has **more than** 500000 residents
-- A Small city has **less than** 500000 residents
+- A Big city has **more than** 1,000,000 residents.
+- A Medium city has **more than** 500,000 residents.
+- A Small city has **less than** 500,000 residents.
 
 
 The cities:
@@ -44,32 +44,21 @@ The relationship between the number of reviews and actual review score may be in
 
 **Results**
 
-The results of this study are presented in a PDF report. This is an useful and accessible way of showing the results. 
+The results of this study are presented in a PDF report. This is a useful and accessible way of showing the results. 
 
 <!---
 Second, summarize your results concisely. Make use of subheaders where appropriate.
 
 --> 
 ## Repository overview
-In this repository there is a Make-file that has to run to make all the maps up to date. All the scripts in this repository will run automatically with the Make-file 
-More information on the running of the make file can be found in the running instructions paragraph.
+This repository consists of various files that will be explained in this section. 
 
-The maps that can be found in this repository are:
+The map source ("src") includes the code that is needed to download, clean and analyze the data. The makefile includes code that can easily run in the command prompt by typing "make". Doing so will automatically run the code in the src code and build the project. From this, two new directories are created: "data" and "gen" (generated). The gen folder consists of two sub-directories, namely "temp" and "output". Gitignore includes files that should be ignore by Git and remain untracked, such as csv files or Rhistory files.
 
-**Source**
+Next, the repository includes a .Rproj file, which contains the options and settings of the project. Moreover, an RMarkdown file is included. This file includes all the tables and plots that were built in the analysis part and includes sections that explain certain phases of the project, such as the data collection and processing parts or the discussion of the results. Finally, this repository has a readme file that contains information about the project, authors, packages used etc. 
 
-In the map source ("src") the code to prepare the date is stored.
-
-**Output**
-
-In the map output the result of the study is shown in a Rmd file.
-
-<!---
-Provide an overview of the directory structure and files.
---> 
 ## Running instructions
-To run the files [Make](https://tilburgsciencehub.com/get/make) is needed . The directory works with make which should be run. Make sure to run the Make-file.
-Also [R-studio](https://tilburgsciencehub.com/get/r) is needed to run the R-files. 
+To run the files [Make](https://tilburgsciencehub.com/get/make) is needed. The directory works with make which should be run in the terminal (Mac users) or in git bash (Windows users). Moreover, [R-studio](https://tilburgsciencehub.com/get/r) is needed to run the R-files. 
 To run the code used in the study, the following packages need to be installed first:
 ```
 install.packages("dplyr")
