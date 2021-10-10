@@ -100,7 +100,7 @@ Moderator 3: Finally, the last moderator includes the city size. As for moderato
 
 
 # Conclusion
-
+In Conclusion, the moderators all have different impact on the research question. Having the status superhost gives a higher predicted rating and it is shown that listings that have this status have more reviews. Although the room type does matter for the amount of reviews a listing gets, a listing with a "shared room" of "hotel room" has almost half of the reviews an "entire home" or "private room", the effect is insignificant and does not influence the relationship between the rating and the number of reviews. Finally, the number of reviews is different per city size. Mostly the smaller cities get less reviews. However, in the model it is shown that small and medium sized cities are rated significantly higher than lager cities. Despite the significantly difference the effect is small and influences the relationship between the rating and the number of reviews minimally. 
 
 
 # References
