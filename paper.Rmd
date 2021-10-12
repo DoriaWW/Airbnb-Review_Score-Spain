@@ -79,14 +79,14 @@ The first table shows that the number of reviews for listings that belong to a s
 Next, a plot of the cleaned dataset was made to visually inspect the data. As the number of reviews goes up, it seems that the rating goes up. The plot would suggest some sort of exponential function.
 
 ```{r,echo=FALSE, cache=FALSE,fig.align='center', fig.cap= "Rating scores"}
-knitr::include_graphics('Overview of rating scores.jpg')
+knitr::include_graphics("gen/output/Overview of rating scores.jpg")
 ```
 
 
 Finally, a regression model is created, shown below:
 
 ```{r,echo=FALSE, cache=FALSE,fig.align='center'}
-knitr::include_graphics('regression.png')
+knitr::include_graphics('gen/output/regression.png')
 ```
 
 From the regression model, the individual outputs for the moderators are interpreted:
@@ -105,5 +105,3 @@ In Conclusion, the moderators all have different impact on the research question
 
 # References
 
-
-# Appendix

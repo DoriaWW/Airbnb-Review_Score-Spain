@@ -5,6 +5,8 @@ library(dplyr); library(modelsummary); library(ggplot2); library(rlist); library
 listings_all <- read.csv("gen/temp/listings_all.csv")
 
 ## Overview of the data
+
+## Create overall table including different variables.
 table_descriptives1 <- listings_all %>%
   group_by(city_size) %>%
   summarize(mean_rating = mean(review_scores_rating),
@@ -38,6 +40,7 @@ table_descriptives <- rbind(table_descriptives3, c("Total",
 dir.create("gen/output", showWarnings = FALSE)
 saveRDS(table_descriptives, file = "gen/output/table_descriptives.RDS") 
 
+## Create a table based on whether the host is a superhost or not.
 superhost_descriptives <- listings_all %>%
   group_by(host_is_superhost) %>%
   summarize(mean_number_reviews = mean(number_of_reviews), mean_rating = mean(review_scores_rating)) %>% 
@@ -45,6 +48,7 @@ superhost_descriptives <- listings_all %>%
 
 saveRDS(superhost_descriptives, file = "gen/output/superhost_descriptives.RDS") 
 
+## Create a table based on room type.
 room_type_descriptives <- listings_all %>%
   group_by(room_type) %>%
   summarize(mean_number_reviews = mean(number_of_reviews), mean_rating = mean(review_scores_rating)) %>%
@@ -53,6 +57,7 @@ room_type_descriptives <- listings_all %>%
 
 saveRDS(room_type_descriptives, file = "gen/output/room_type_descriptives.RDS") 
 
+## Create a table grouped by the size of the city in which the listing is. 
 city_size_descriptives <- listings_all %>%
   group_by(city_size) %>%
   summarize(mean_number_reviews = mean(number_of_reviews), mean_rating = mean(review_scores_rating)) %>%
@@ -61,14 +66,14 @@ city_size_descriptives <- listings_all %>%
 
 saveRDS(city_size_descriptives, file = "gen/output/city_size_descriptives.RDS") 
 
-## Plotting the number of reviews against the rating
+## Plotting the number of reviews against the rating.
 plot <- listings_all %>% 
   ggplot(aes(x = number_of_reviews, y = review_scores_rating)) +
   geom_point() + 
   xlab("Number of reviews") +
   ylab("Overall rating") +
   ggtitle("Overview_of_rating_scores")
-ggsave("gen/output/Overview_of_rating_scores.jpg", height = 10, width = 15, units = "in")
+ggsave("gen/output/Overview of rating scores.jpg", height = 10, width = 15, units = "in")
 
 ## Regression and output file
 regression <- lm(review_scores_rating ~ host_is_superhost*number_of_reviews + room_type_private*number_of_reviews + room_type_hotel*number_of_reviews + room_type_entire*number_of_reviews + city_size_small*number_of_reviews + city_size_medium*number_of_reviews, listings_all)
