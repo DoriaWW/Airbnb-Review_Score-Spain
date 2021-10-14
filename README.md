@@ -47,13 +47,13 @@ The relationship between the number of reviews and actual review score may be in
 In the RMarkdown file there are tables shown with the result of the study.
 In this tables it is shown that superhosts receive more reviews and higher ratings. Furthermore, the room types "private room" and "entire home" get almost double the number of reviews but there is no significant difference in terms of the rating. Additionally, the city sizes large and medium also receive more than double the amount of reviews but gain overall the same rating as smaller cities.
 
-In the regression model the individual outputs for the moderators are interpreted:
+In the regression model the individual outputs for the moderators are interpreted. All the results are in the RMarkdown file.
 
-_Moderator 1:_  The predicted rating including only the first moderator, host_is_superhost becomes: rating = 4.272 + .387 x host_is_superhost + .0015 x nr_of_reviews - .0013 x host_is_superhost x nr_of_reviews. If the host of a listing is a superhost, this variable is coded as a "1". Thus, the rating for a superhost is 4.272 + .387 + nr_of_reviews x (.0015 - .0013) = 4.659 + .0002 * nr_of_reviews, whereas the rating of a listing from someone who is not a superhost is 4.272 + .0015 x nr_of_reviews. Despite the interaction effect being negative (-.0013), the predicted ratings for superhosts are clearly higher. Moreover, this effect is highly significant (p<.01)
+_Moderator 1:_  The interaction effect is negative, nonetheless the predicted ratings for superhosts are higher and this effect is highly significant.
 
 _Moderator 2:_ For the second moderator, room_type, the results are statistically insignificant (p=.95, p=.34, p=.83). Thus, no further work is needed on this moderator, as this moderator does not influence the relationship between the rating and the number of reviews.
 
-_Moderator 3:_ Finally, the last moderator includes the city size. As for moderator 1, these interaction effects are highly significant (p<.01). The predicted rating including this moderator is as follows: 4.272 + .0015 x nr_of_reviews + .037 x size_small + .072 x size_medium + .0007 x nr_of_reviews x size_small - .0003 x nr_of_reviews * size_medium. From the output based on the moderators implemented as independent variables, it can be seen that they are significantly larger than for the base level (which is size_large). Thus, these small and medium sized cities are rated significantly higher than larger cities. However, looking at the interaction effects for these two columns, despite being statistically significant, are so small (.0007 and -.0003) that they only influence the relationship between the rating and number of reviews minimally. 
+_Moderator 3:_ In the last moderator the small and medium sized cities are rated significantly higher than larger cities. However, looking at the interaction effects for these two columns, despite being statistically significant, they are so small that they only influence the relationship between the rating and number of reviews minimally. 
 
 **Conclusion**
 
