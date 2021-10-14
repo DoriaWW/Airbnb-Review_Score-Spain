@@ -1,5 +1,5 @@
 ## Setup
-library(dplyr); library(modelsummary); library(ggplot2); library(rlist); library(webshot)
+library(dplyr); library(rlist);
 
 ## Load file
 listings_all <- read.csv("gen/temp/listings_all.csv")

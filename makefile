@@ -1,10 +1,16 @@
-all: gen/output/city_size_descriptives.RDS gen/output/room_type_descriptives.RDS gen/output/superhost_descriptives.RDS gen/output/table_descriptives.RDS gen/output/Overview_of_rating_scores.jpg gen/output/regression.png
+OUTPUT = gen/output
+TEMP = gen/temp
 
-gen/temp/listings_all_raw.csv: src/download_data.R
+all: $(OUTPUT)/city_size_descriptives.RDS $(OUTPUT)/room_type_descriptives.RDS $(OUTPUT)/superhost_descriptives.RDS $(OUTPUT)/table_descriptives.RDS $(OUTPUT)/Overview_of_rating_scores.jpg $(OUTPUT)/regression.png
+
+$(TEMP)/listings_all_raw.csv: src/download_data.R
 		R --vanilla < src/download_data.R
 		
-gen/temp/listings_all.csv: src/clean_data.R gen/temp/listings_all_raw.csv
+$(TEMP)/listings_all.csv: src/clean_data.R $(TEMP)/listings_all_raw.csv
 		R --vanilla < src/clean_data.R
 
-gen/output/city_size_descriptives.RDS gen/output/room_type_descriptives.RDS gen/output/superhost_descriptives.RDS gen/output/table_descriptives.RDS gen/output/Overview_of_rating_scores.jpg gen/output/regression.png: src/analysis.R src/clean_data.R gen/temp/listings_all.csv
+$(OUTPUT)/city_size_descriptives.RDS $(OUTPUT)/room_type_descriptives.RDS $(OUTPUT)/superhost_descriptives.RDS $(OUTPUT)/table_descriptives.RDS: src/analysis.R src/clean_data.R $(TEMP)/listings_all.csv
 		R --vanilla < src/analysis.R
+		
+$(OUTPUT)/Overview_of_rating_scores.jpg $(OUTPUT)/regression.png: src/plotting.R $(TEMP)/listings_all.csv
+		R --vanilla < src/plotting.R
