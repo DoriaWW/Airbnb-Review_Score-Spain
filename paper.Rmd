@@ -1,10 +1,12 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
 ## To review or not to review? That's the question
 
 Team members: 
 [Doria Wengting Wang](https://github.com/DoriaWW), [Inge Oostveen](https://github.com/IngeOostveen), [Ralph Delsing](https://github.com/RalphGit21), [Paulus Hovens](https://github.com/pphovens), [Wouter Floors](https://github.com/WouterFloors)
-
-## Abstract:
-
 
 bibliography: references.bib
 output: pdf_document
@@ -21,9 +23,9 @@ library(dplyr)
 
 # Introduction
 
-# Motivation
-
 We all know the feeling of opening an e-mail that asks you to leave a review on a product that you just bought or a listing that you stayed the night at. But do more reviews lead to a higher review score? Furthermore, this effect is examined at cities in Spain that differ in sizes, such as Malaga compared to the capital Madrid. This code is written in order to find answers to these questions.
+
+# Motivation
 
 The reason for diving into this problem is because review scores are an important factor for customers when they decide which listing to stay at. Hosts want a good review score and some push their guests to leave a review. The issue that arises is that more reviews does not necessarily result into a higher review score. This study is conducted in order to show hosts if they should or should not push their guests for reviews by analyzing the relationship between review score and number of reviews, while taking moderators and control variables into account.
 
@@ -85,7 +87,7 @@ knitr::include_graphics("gen/output/Overview_of_rating_scores.jpg")
 
 Finally, a regression model is created, shown below:
 
-```{r,echo=FALSE, cache=FALSE,fig.align='center'}
+```{r,echo=FALSE, cache=FALSE,fig.align='center', out.height='30%'}
 knitr::include_graphics('gen/output/regression.png')
 ```
 
