@@ -45,23 +45,20 @@ The relationship between the number of reviews and actual review score may be in
 **Results**
 
 In the RMarkdown file there are tables shown with the result of the study.
-In this tables it is shown that superhosts receive more reviews and higher ratings. Furthermore, the room types "private room" and "entire home" get almost double the number of reviews but there is no significant difference in terms of the rating. Additionally, the city sizes large and medium also receive more than double the amount of reviews but gain overall the same rating as smaller cities.
+In this table it is shown that superhosts receive more reviews and higher ratings. Furthermore, the room types "private room" and "entire home" get almost double the amount of reviews compared to other room types, though there is no significant difference in terms of the rating. Additionally, the city sizes large and medium also receive more than double the amount of reviews but receive about the same rating as smaller cities on average.
 
 In the regression model the individual outputs for the moderators are interpreted. All the results are in the RMarkdown file.
 
-_Moderator 1:_  The interaction effect is negative, nonetheless the predicted ratings for superhosts are higher and this effect is highly significant.
+_Moderator 1:_  The interaction effect is negative. Nonetheless, the predicted ratings for superhosts are higher and this effect is highly significant.
 
 _Moderator 2:_ For the second moderator, room_type, the results are statistically insignificant (p=.95, p=.34, p=.83). Thus, no further work is needed on this moderator, as this moderator does not influence the relationship between the rating and the number of reviews.
 
-_Moderator 3:_ In the last moderator the small and medium sized cities are rated significantly higher than larger cities. However, looking at the interaction effects for these two columns, despite being statistically significant, they are so small that they only influence the relationship between the rating and number of reviews minimally. 
+_Moderator 3:_ In the last moderator, the small and medium sized cities are rated significantly higher than larger cities. However, looking at the interaction effects for these two columns, despite being statistically significant, they are so small that they only influence the relationship between the rating and number of reviews minimally. 
 
 **Conclusion**
 
-In Conclusion, the moderators all have different impact on the research question. Having the status superhost gives a higher predicted rating and it is shown that listings that have this status have more reviews. Although the room type does matter for the amount of reviews a listing gets, a listing with a "shared room" of "hotel room" has almost half of the reviews an "entire home" or "private room", the effect is insignificant and does not influence the relationship between the rating and the number of reviews. Finally, the number of reviews is different per city size. Mostly the smaller cities get less reviews. However, in the model it is shown that small and medium sized cities are rated significantly higher than lager cities. Despite the significantly difference the effect is small and influences the relationship between the rating and the number of reviews minimally. To conclude, the moderators can impact the relationship between the rating and the number of reviews but is for the most part significantly small.
-<!---
-Second, summarize your results concisely. Make use of subheaders where appropriate.
+In conclusion, the moderators all have different impacts on the research question. Having the status superhost gives a higher predicted rating and it is shown that listings that have this status have more reviews. Although the room type does matter for the number of reviews a listing gets (a listing with a "shared room" of "hotel room" has almost half of the reviews an "entire home" or "private room" has), the effect is insignificant and does not influence the relationship between the rating and the number of reviews. Finally, the number of reviews is different per city size. Mostly, the smaller cities get less reviews. However, in the model it is shown that small and medium sized cities are rated significantly higher than larger cities. Despite the significant difference, the effect is small and influences the relationship between the rating and the number of reviews minimally. To conclude, the moderators can impact the relationship between the rating and the number of reviews but is for the most part significantly small.
 
---> 
 ## Repository overview
 This repository consists of various files that will be explained in this section. 
 
