@@ -20,5 +20,6 @@ msummary(regression,
          title = "Regression model",
          fmt = 4,
          estimate = "{estimate}{stars} | ({std.error})",
+         statistic = NULL,
          gof_omit = "AIC|BIC|Log|Pseudo|F",
          output = "gen/output/regression.png")
