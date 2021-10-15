@@ -1,17 +1,13 @@
 ---
 output:
-  pdf_document: default
   html_document: default
+  pdf_document: default
 ---
-## To review or not to review? That's the question
+# To review or not to review? That's the question
+
 
 Team members: 
 [Doria Wengting Wang](https://github.com/DoriaWW), [Inge Oostveen](https://github.com/IngeOostveen), [Ralph Delsing](https://github.com/RalphGit21), [Paulus Hovens](https://github.com/pphovens), [Wouter Floors](https://github.com/WouterFloors)
-
-bibliography: references.bib
-output: pdf_document
-header-includes: 
-- \usepackage{booktabs}
 
 ---
 
@@ -21,33 +17,37 @@ library(modelsummary)
 library(dplyr)
 ```
 
-# Introduction
+## Introduction
 
 We all know the feeling of opening an e-mail that asks you to leave a review on a product that you just bought or a listing that you stayed the night at. But do more reviews lead to a higher review score? Furthermore, this effect is examined at cities in Spain that differ in sizes, such as Malaga compared to the capital Madrid. This code is written in order to find answers to these questions.
 
-# Motivation
+
+
+## Motivation
 
 The reason for diving into this problem is because review scores are an important factor for customers when they decide which listing to stay at. Hosts want a good review score and some push their guests to leave a review. The issue that arises is that more reviews does not necessarily result into a higher review score. This study is conducted in order to show hosts if they should or should not push their guests for reviews by analyzing the relationship between review score and number of reviews, while taking moderators and control variables into account.
 
 The study focuses on seven different cities in Spain. To be able to examine the differences between small and big cities, there are three categories; Big, Medium or Small. The number of residents determine the category of the city:
 
-A Big city has more than 1,000,000 (a million) residents --> Barcelona and Madrid
+A Big city has more than 1,000,000 residents --> Barcelona and Madrid
 
 A Medium city has more than 500,000 residents --> Sevilla, Valencia and Malaga
 
 A Small city has less than 500,000 residents --> Menorca and Girona
 
 
-# Data
 
-## Data Collection
+## Data
+
+### Data Collection
 The data is collected from AirBNB in order to analyze if the number of reviews has an effect on the review score. The data contains all listings in a specific city with data about the listing, the host, review scores and much more. The data is downloaded from the web and stored in a Google Drive in order to be accessed at any point in time (see src/download_data.R).
 
-## Data Processing
-In order to analyze the data, a new dataset was created by combining the separate cities' listings. Missing values were deleted <<Put something about the missing values here and that it happened in relative fashion >>. A city ID column is added to keep track of which city a listingbelongs to. Irrelevant columns have been removed, while dummy variables for the moderators have been added.
+### Data Processing
+In order to analyze the data, a new dataset was created by combining the separate cities' listings. Missing values were deleted <<Put something about the missing values here and that it happened in relative fashion >>. A city ID column is added to keep track of which city a listing belongs to. Irrelevant columns have been removed, while dummy variables for the moderators have been added.
 
 
-# Methodology
+
+## Methodology
 
 The relationship between the number of reviews and actual review score may be influenced by other variables, which are integrated in the model as moderators. In this study, three moderators are considered which are city size, room type and superhost status.
 
@@ -57,8 +57,7 @@ The relationship between the number of reviews and actual review score may be in
 
 
 
-
-# Results
+## Results
 
 First, an overall descriptives table was made for both the total dataset and the dataset grouped by size, showing variables such as the mean rating, mean number of reviews, ratio of superhosts etc. This table looks as follows:
 
@@ -66,7 +65,9 @@ First, an overall descriptives table was made for both the total dataset and the
 table_descriptives<-readRDS("gen/output/table_descriptives.RDS")
 knitr::kable(table_descriptives)
 ``` 
+
 Moreover, three individual tables were made that show the average rating and number of reviews for the cleaned dataset, grouped by the three moderators.
+
 ```{r, echo=FALSE, cache=FALSE}
 superhost_descriptives<-readRDS("gen/output/superhost_descriptives.RDS")
 knitr::kable(superhost_descriptives)
@@ -76,6 +77,7 @@ city_size_descriptives<-readRDS("gen/output/city_size_descriptives.RDS")
 knitr::kable(city_size_descriptives)
 ```
 
+
 The first table shows that the number of reviews for listings that belong to a superhost receive more than double the number of reviews (67 vs 30) and receive quite higher ratings (4.82 vs 4.47). the second table shows that room types "Entire home" and "private room" get almost double the number of reviews compared to "shared room" and "hotel room". No significant difference in terms of ratings can be seen between these room types, although shared rooms stands out a little bit in last place. The first table that was created including the entire dataset did show that there way more entire homes and private rooms than hotel rooms and shared rooms. The reason for these latter 2 being less common could also explain why these receive less reviews. Finally, the last table shows that listings in large and medium sized cities receive more than double the amount of reviews than listings that are established in smaller cities. In terms of the overall rating, the three sizes score about the same.
 
 Next, a plot of the cleaned dataset was made to visually inspect the data. As the number of reviews goes up, it seems that the rating goes up. The plot would suggest some sort of exponential function.
@@ -83,7 +85,6 @@ Next, a plot of the cleaned dataset was made to visually inspect the data. As th
 ```{r,echo=FALSE, cache=FALSE,fig.align='center', fig.cap= "Rating scores"}
 knitr::include_graphics("gen/output/Overview_of_rating_scores.jpg")
 ```
-
 
 Finally, a regression model is created, shown below:
 
@@ -101,9 +102,10 @@ Moderator 3: Finally, the last moderator includes the city size. As for moderato
 
 
 
-# Conclusion
-In Conclusion, the moderators all have different impact on the research question. Having the status superhost gives a higher predicted rating and it is shown that listings that have this status have more reviews. Although the room type does matter for the amount of reviews a listing gets, a listing with a "shared room" of "hotel room" has almost half of the reviews an "entire home" or "private room", the effect is insignificant and does not influence the relationship between the rating and the number of reviews. Finally, the number of reviews is different per city size. Mostly the smaller cities get less reviews. However, in the model it is shown that small and medium sized cities are rated significantly higher than lager cities. Despite the significantly difference the effect is small and influences the relationship between the rating and the number of reviews minimally. To conclude, the moderators can impact the relationship between the rating and the number of reviews but is for the most part significantly small.
+## Conclusion
+In conclusion, the moderators all have different impacts on the research question. Having the status superhost gives a higher predicted rating and it is shown that listings that have this status have more reviews. Although the room type does matter for the number of reviews a listing gets (a listing with a "shared room" of "hotel room" has almost half of the reviews an "entire home" or "private room" has), the effect is insignificant and does not influence the relationship between the rating and the number of reviews. Finally, the number of reviews is different per city size. Mostly, the smaller cities get less reviews. However, in the model it is shown that small and medium sized cities are rated significantly higher than larger cities. Despite the significant difference, the effect is small and influences the relationship between the rating and the number of reviews minimally. To conclude, the moderators can impact the relationship between the rating and the number of reviews but is for the most part significantly small.
 
 
-# References
+
+## References
 
