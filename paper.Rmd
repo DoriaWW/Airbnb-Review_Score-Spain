@@ -82,7 +82,7 @@ The first table shows that the number of reviews for listings that belong to a s
 
 Next, a plot of the cleaned dataset was made to visually inspect the data. As the number of reviews goes up, it seems that the rating goes up. The plot would suggest some sort of exponential function.
 
-```{r,echo=FALSE, cache=FALSE,fig.align='center', fig.cap= "Rating scores"}
+```{r,echo=FALSE, cache=FALSE,fig.align='center', fig.cap= "Rating scores", out.height='50%', out.width='80%'}
 knitr::include_graphics("gen/output/Overview_of_rating_scores.jpg")
 ```
 
