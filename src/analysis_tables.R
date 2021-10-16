@@ -45,7 +45,7 @@ superhost_descriptives <- listings_all %>%
   group_by(host_is_superhost) %>%
   summarize(mean_number_reviews = mean(number_of_reviews), mean_rating = mean(review_scores_rating)) %>% 
   mutate_each(funs(round(.,0)), mean_number_reviews) %>% mutate_each(funs(round(.,2)), mean_rating)
-
+  
 saveRDS(superhost_descriptives, file = "gen/output/superhost_descriptives.RDS") 
 
 ## Create a table based on room type.
@@ -64,4 +64,4 @@ city_size_descriptives <- listings_all %>%
   mutate_each(funs(round(.,0)), mean_number_reviews) %>% mutate_each(funs(round(.,2)), mean_rating) %>%
   arrange(desc(mean_number_reviews, mean_rating)) %>% arrange(city_size)
 
-saveRDS(city_size_descriptives, file = "gen/output/city_size_descriptives.RDS") 
+saveRDS(city_size_descriptives, file = "gen/output/city_size_descriptives.RDS")
