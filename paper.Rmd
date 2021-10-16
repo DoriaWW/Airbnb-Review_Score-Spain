@@ -88,7 +88,7 @@ knitr::include_graphics("gen/output/Overview_of_rating_scores.jpg")
 
 Finally, a regression model is created, shown below:
 
-```{r,echo=FALSE, cache=FALSE,fig.align='center', out.height='30%'}
+```{r,echo=FALSE, cache=FALSE,fig.align='center', out.height='50%'}
 knitr::include_graphics('gen/output/regression.png')
 ```
 
