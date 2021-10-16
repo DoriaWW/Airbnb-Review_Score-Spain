@@ -42,7 +42,6 @@ vignettes/*.pdf
 **.csv
 
 # Output
-**.pdf
 **.Rds
 **.RDS
 **.jpg
