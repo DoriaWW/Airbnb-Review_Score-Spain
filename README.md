@@ -44,7 +44,7 @@ The relationship between the number of reviews and actual review score may be in
 
 **Results**
 
-The RMarkdown file contains table that display the result of the study.
+The RMarkdown file contains tables that display the result of the study.
 In these generated tables, it is shown that superhosts receive more reviews and higher ratings. Furthermore, the room types "private room" and "entire home" get almost double the amount of reviews compared to other room types, though there is no significant difference in terms of the rating. Additionally, the city sizes large and medium also receive more than double the amount of reviews but receive about the same rating as smaller cities on average.
 
 In the regression model, the individual outputs for the moderators are interpreted. All the results are in the RMarkdown file.
@@ -93,13 +93,13 @@ The status “Superhost” has an effect on the number of reviews and rating a l
 There are multiple studies that focus on reviews on AirBnB. Studies worth mentioning are:
 - Bridges, J., & Vásquez, C. (2018). If nearly all Airbnb reviews are positive, does that make them meaningless?. Current Issues in Tourism, 21(18), 2057-2075.
   
-In the study the authors find that AirBnB reviews appear to be highly positive and therefor quite similar to one another. If reviews are quite similar, what is the added value that reviews bring to one listing? 
+In the study, the authors find that AirBnB reviews appear to be highly positive and, therefore, quite similar to one another. If reviews are quite similar, what is the added value that reviews bring to a listing? 
 - Ert, E., Fleischer, A., & Magen, N. (2016). Trust and reputation in the sharing economy: The role of personal photos in Airbnb. Tourism management, 55, 62-73.
 
-Fleischer and Magen find that the more trustworthy a host is perceived on their profile picture, the higher the price of the listing can be, and the probabilty of the listing being chosen. Furthermore, they find that the host's reputation, their online review scores, has less effect on the price or booking.
+Fleischer and Magen find that the more trustworthy a host is perceived on their profile picture, the higher the price of the listing can be and the higher the probabilty of the listing being chosen. Furthermore, they find that the host's reputation and their online review score has less effect on the price or booking.
 - Liang, S., Schuckert, M., Law, R., & Chen, C. C. (2017). Be a “Superhost”: The importance of badge systems for peer-to-peer rental accommodations. Tourism management, 60, 454-465. 
 
-This study focuses on the label "Superhost", a label that is given by AirBnB for a host with certain qualities, and how this label can impact listings' review volume and ratings. "Superhosts" are more likely to receive reviews and higher ratings and guest are willing to pay more for these listings.
+This study focuses on the label "Superhost", a label that is given by AirBnB for a host with certain qualities, and how this label can impact listings' review volume and ratings. "Superhosts" are more likely to receive reviews and higher ratings and guests are willing to pay more for these listings.
 - Coyle, D., & Yeung, T. (2016). Understanding Airbnb in fourteen European cities. The Jean-Jacques Laffont Digital Chair Working Papers, 7088, 1-33.
 - Adamiak, C., Szyda, B., Dubownik, A., & García-Álvarez, D. (2019). Airbnb offer in Spain—spatial analysis of the pattern and determinants of its distribution. ISPRS International Journal of Geo-Information, 8(3), 155.
 
