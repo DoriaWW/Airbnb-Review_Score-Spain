@@ -1,7 +1,7 @@
 ---
 output:
-  html_document: default
   pdf_document: default
+  html_document: default
 ---
 # To review or not to review? That's the question
 
@@ -43,7 +43,7 @@ A Small city has less than 500,000 residents --> Menorca and Girona
 The data is collected from AirBNB in order to analyze if the number of reviews has an effect on the review score. The data contains all listings in a specific city with data about the listing, the host, review scores and much more. The data is downloaded from the web and stored in a Google Drive in order to be accessed at any point in time (see src/download_data.R).
 
 ### Data Processing
-In order to analyze the data, a new dataset was created by combining the separate cities' listings. Missing values were deleted after being inspected. On average, 26% of each cities listings contained missing values on our variables. These were deleted because the dataset still has enough observations, and because the missing values could not be used for an analysis. A city ID column is added to keep track of which city a listing belongs to. Irrelevant columns have been removed, while dummy variables for the moderators have been added.
+In order to analyze the data, a new dataset was created by combining the separate cities' listings. Missing values were deleted after being inspected. On average, 26% of each cities listings contained missing values on our variables. These were deleted because the dataset still has enough observations and because the missing values could not be used for an analysis. A city ID column is added to keep track of which city a listing belongs to. Irrelevant columns have been removed, while dummy variables for the moderators have been added.
 
 
 
