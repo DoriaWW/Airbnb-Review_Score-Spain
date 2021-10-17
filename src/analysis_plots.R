@@ -11,7 +11,7 @@ plot <- listings_all %>%
   xlab("Number of reviews") +
   ylab("Overall rating") +
   ggtitle("Overview_of_rating_scores")
-ggsave("gen/output/Overview_of_rating_scores.jpg", height = 10, width = 15, units = "in")
+ggsave("gen/output/overview_of_rating_scores.jpg", height = 10, width = 15, units = "in")
 
 ## Regression and output file
 regression <- lm(review_scores_rating ~ host_is_superhost*number_of_reviews + room_type_private*number_of_reviews + room_type_hotel*number_of_reviews + room_type_entire*number_of_reviews + city_size_small*number_of_reviews + city_size_medium*number_of_reviews, listings_all)
